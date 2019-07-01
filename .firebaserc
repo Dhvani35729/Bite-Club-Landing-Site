@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "default": "biteclub-f12a1"
+  }
+}
