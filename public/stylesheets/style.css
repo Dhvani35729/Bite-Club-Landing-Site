@@ -433,7 +433,7 @@ color: black;
 
 
 
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600&amp;subset=latin-ext");
 
 .popup2 {
     display: flex;
