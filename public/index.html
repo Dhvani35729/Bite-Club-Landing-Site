@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
-    
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <head>
-        <title>Bite Club</title>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <head>
+    <title>Bite Club</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" type="image/png" href="images/sm-sq.jpg" />
+
     <style>
-        * {
-            box-sizing: border-box;
-        }
-    
-    .strips {
+      * {
+        box-sizing: border-box;
+      }
+
+      .strips {
         min-height: 100vh;
         text-align: center;
         overflow: hidden;
         color: white;
-    }
-    .strips__strip {
+      }
+      .strips__strip {
         will-change: width, left, z-index, height;
         position: absolute;
         width: 33.3333333333%;
@@ -25,77 +25,77 @@
         overflow: hidden;
         cursor: pointer;
         transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .strips__strip:nth-child(1) {
+      }
+      .strips__strip:nth-child(1) {
         left: 0;
-    }
-    .strips__strip:nth-child(2) {
+      }
+      .strips__strip:nth-child(2) {
         left: 33.3333333333%;
-    }
-    .strips__strip:nth-child(3) {
+      }
+      .strips__strip:nth-child(3) {
         left: 66.6666666667%;
-    }
-    .strips__strip:nth-child(1) .strip__content {
-        background: #46A2EB;
+      }
+      .strips__strip:nth-child(1) .strip__content {
+        background: #46a2eb;
         transform: translate3d(-100%, 0, 0);
         animation-name: strip1;
         animation-delay: 0.1s;
-    }
-    .strips__strip:nth-child(2) .strip__content {
-        background: #F8D778;
+      }
+      .strips__strip:nth-child(2) .strip__content {
+        background: #f8d778;
         transform: translate3d(0, 100%, 0);
         animation-name: strip2;
         animation-delay: 0.2s;
-    }
-    .strips__strip:nth-child(3) .strip__content {
-        background: #474A4D;
+      }
+      .strips__strip:nth-child(3) .strip__content {
+        background: #474a4d;
         transform: translate3d(0, -100%, 0);
         animation-name: strip3;
         animation-delay: 0.3s;
-    }
-    .strips__strip:nth-child(4) .strip__content {
-        background: #474A4D;
+      }
+      .strips__strip:nth-child(4) .strip__content {
+        background: #474a4d;
         transform: translate3d(0, 100%, 0);
         animation-name: strip4;
         animation-delay: 0.4s;
-    }
-    .strips__strip:nth-child(5) .strip__content {
-        background: #474A4D;
+      }
+      .strips__strip:nth-child(5) .strip__content {
+        background: #474a4d;
         transform: translate3d(100%, 0, 0);
         animation-name: strip5;
         animation-delay: 0.5s;
-    }
-    @media screen and (max-width: 760px) {
+      }
+      @media screen and (max-width: 760px) {
         .strips__strip {
-            min-height: 20vh;
+          min-height: 20vh;
         }
         .strips__strip:nth-child(1) {
-            top: 0;
-            left: 0;
-            width: 100%;
+          top: 0;
+          left: 0;
+          width: 100%;
         }
         .strips__strip:nth-child(2) {
-            top: 20vh;
-            left: 0;
-            width: 100%;
+          top: 20vh;
+          left: 0;
+          width: 100%;
         }
         .strips__strip:nth-child(3) {
-            top: 40vh;
-            left: 0;
-            width: 100%;
+          top: 40vh;
+          left: 0;
+          width: 100%;
         }
         .strips__strip:nth-child(4) {
-            top: 60vh;
-            left: 0;
-            width: 100%;
+          top: 60vh;
+          left: 0;
+          width: 100%;
         }
         .strips__strip:nth-child(5) {
-            top: 80vh;
-            left: 0;
-            width: 100%;
+          top: 80vh;
+          left: 0;
+          width: 100%;
         }
-    }
-    .strips .strip__content {
+      }
+      .strips .strip__content {
         animation-duration: 1s;
         animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
         animation-fill-mode: both;
@@ -108,13 +108,13 @@
         width: 100%;
         height: 100%;
         text-decoration: none;
-    }
-    .strips .strip__content:hover:before {
+      }
+      .strips .strip__content:hover:before {
         transform: skew(-30deg) scale(3) translate(0, 0);
         opacity: 0.1;
-    }
-    .strips .strip__content:before {
-        content: "";
+      }
+      .strips .strip__content:before {
+        content: '';
         position: absolute;
         z-index: 1;
         top: 0;
@@ -126,8 +126,8 @@
         transform-origin: center center;
         transform: skew(-30deg) scaleY(1) translate(0, 0);
         transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .strips .strip__inner-text {
+      }
+      .strips .strip__inner-text {
         will-change: transform, opacity;
         position: absolute;
         z-index: 5;
@@ -137,32 +137,32 @@
         transform: translate(-50%, -50%) scale(0.5);
         opacity: 0;
         transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .strips__strip--expanded {
+      }
+      .strips__strip--expanded {
         width: 100%;
         top: 0 !important;
         left: 0 !important;
         z-index: 3;
         cursor: default;
-    }
-    @media screen and (max-width: 760px) {
+      }
+      @media screen and (max-width: 760px) {
         .strips__strip--expanded {
-            min-height: 100vh;
+          min-height: 100vh;
         }
-    }
-    .strips__strip--expanded .strip__content:hover:before {
+      }
+      .strips__strip--expanded .strip__content:hover:before {
         transform: skew(-30deg) scale(1) translate(0, 0);
         opacity: 0.05;
-    }
-    .strips__strip--expanded .strip__title {
+      }
+      .strips__strip--expanded .strip__title {
         opacity: 0;
-    }
-    .strips__strip--expanded .strip__inner-text {
+      }
+      .strips__strip--expanded .strip__inner-text {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
-    }
-    
-    .strip__title {
+      }
+
+      .strip__title {
         display: block;
         margin: 0;
         position: relative;
@@ -171,14 +171,14 @@
         font-size: 3.5vw;
         color: white;
         transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    @media screen and (max-width: 760px) {
+      }
+      @media screen and (max-width: 760px) {
         .strip__title {
-            font-size: 28px;
+          font-size: 28px;
         }
-    }
-    
-    .strip__close {
+      }
+
+      .strip__close {
         position: absolute;
         right: 3vw;
         top: 3vw;
@@ -187,160 +187,171 @@
         transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         cursor: pointer;
         transition-delay: 0.5s;
-    }
-    .strip__close--show {
+      }
+      .strip__close--show {
         opacity: 1;
-    }
-    
-    @keyframes strip1 {
+      }
+
+      @keyframes strip1 {
         0% {
-            transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
         }
         100% {
-            transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
         }
-    }
-    @keyframes strip2 {
+      }
+      @keyframes strip2 {
         0% {
-            transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
         }
         100% {
-            transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
         }
-    }
-    @keyframes strip3 {
+      }
+      @keyframes strip3 {
         0% {
-            transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
         }
         100% {
-            transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
         }
-    }
-    @keyframes strip4 {
+      }
+      @keyframes strip4 {
         0% {
-            transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
         }
         100% {
-            transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
         }
-    }
-    @keyframes strip5 {
+      }
+      @keyframes strip5 {
         0% {
-            transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
         }
         100% {
-            transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
         }
-    }
-    /* Demo purposes */
-    body {
-        font-family: "verdana";
+      }
+      /* Demo purposes */
+      body {
+        font-family: 'verdana';
         -webkit-font-smoothing: antialiased;
         text-rendering: geometricPrecision;
         line-height: 1.5;
-    }
-    
-    h1, h2 {
+        margin: 0 !important;
+      }
+
+      h1,
+      h2 {
         font-weight: 300;
-    }
-    
-    .fa {
+      }
+
+      .fa {
         font-size: 30px;
         color: white;
-    }
-    
-    h2 {
+      }
+
+      h2 {
         font-size: 36px;
         margin: 0 0 16px;
-    }
-    
-    p {
-        margin: 0 0 16px;
-    }
-    
-    </style>
-    </head>
-    
-    <body>
-                  <section class="strips">
-                      <article class="strips__strip">
-                           <a href="restaurants.html">
-                          <div class="strip__content">
-                              <h1 class="strip__title" data-name="Dolor">For Restaurants</h1>
-                          </div>
-                           </a>
-                      </article>
-                      <article class="strips__strip">
-                          <a href="events.html">
-                          <div class="strip__content">
-                              <h1 class="strip__title" data-name="Sit">For Events</h1>
-                          </div>
-                          </a>
-                      </article>
-                      <article class="strips__strip">
-                          <a href="companies.html">
-                          <div class="strip__content">
-                              <h1 class="strip__title" data-name="Amet">For Companies</h1>
-                          </div>
-                          </a>
-                      </article>
-                      <i class="fa fa-close strip__close"></i>
-                  </section>
-                  
-                  <script type="text/javascript" src="js/jquery.js"></script>
-                  
-                  <script type="text/javascript" src="js/app.js"></script>
+      }
 
-             <script>
-                 var Expand = (function() {
-                               var tile = $('.strips__strip');
-                               var tileLink = $('.strips__strip > .strip__content');
-                               var tileText = tileLink.find('.strip__inner-text');
-                               var stripClose = $('.strip__close');
-                               
-                               var expanded  = false;
-                               
-                               var open = function() {
-                               
-                               var tile = $(this).parent();
-                               
-                               if (!expanded) {
-                               tile.addClass('strips__strip--expanded');
-                               // add delay to inner text
-                               tileText.css('transition', 'all .5s .3s cubic-bezier(0.23, 1, 0.32, 1)');
-                               stripClose.addClass('strip__close--show');
-                               stripClose.css('transition', 'all .6s 1s cubic-bezier(0.23, 1, 0.32, 1)');
-                               expanded = true;
-                               }
-                               };
-                               
-                               var close = function() {
-                               if (expanded) {
-                               tile.removeClass('strips__strip--expanded');
-                               // remove delay from inner text
-                               tileText.css('transition', 'all 0.15s 0 cubic-bezier(0.23, 1, 0.32, 1)');
-                               stripClose.removeClass('strip__close--show');
-                               stripClose.css('transition', 'all 0.2s 0s cubic-bezier(0.23, 1, 0.32, 1)')
-                               expanded = false;
-                               }
-                               }
-                               
-                               var bindActions = function() {
-                               tileLink.on('click', open);
-                               stripClose.on('click', close);
-                               };
-                               
-                               var init = function() {
-                               bindActions();
-                               };
-                               
-                               return {
-                               init: init
-                               };
-                               
-                               }());
-                               
-                               Expand.init();
-                 </script>
-             
-    </body>
+      p {
+        margin: 0 0 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="strips">
+      <article class="strips__strip">
+        <a href="restaurants.html">
+          <div class="strip__content">
+            <h1 class="strip__title" data-name="Dolor">For Restaurants</h1>
+          </div>
+        </a>
+      </article>
+      <article class="strips__strip">
+        <a href="events.html">
+          <div class="strip__content">
+            <h1 class="strip__title" data-name="Sit">For Events</h1>
+          </div>
+        </a>
+      </article>
+      <article class="strips__strip">
+        <a href="companies.html">
+          <div class="strip__content">
+            <h1 class="strip__title" data-name="Amet">For Companies</h1>
+          </div>
+        </a>
+      </article>
+      <i class="fa fa-close strip__close"></i>
+    </section>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <script>
+      var Expand = (function() {
+        var tile = $('.strips__strip');
+        var tileLink = $('.strips__strip > .strip__content');
+        var tileText = tileLink.find('.strip__inner-text');
+        var stripClose = $('.strip__close');
+
+        var expanded = false;
+
+        var open = function() {
+          var tile = $(this).parent();
+
+          if (!expanded) {
+            tile.addClass('strips__strip--expanded');
+            // add delay to inner text
+            tileText.css(
+              'transition',
+              'all .5s .3s cubic-bezier(0.23, 1, 0.32, 1)'
+            );
+            stripClose.addClass('strip__close--show');
+            stripClose.css(
+              'transition',
+              'all .6s 1s cubic-bezier(0.23, 1, 0.32, 1)'
+            );
+            expanded = true;
+          }
+        };
+
+        var close = function() {
+          if (expanded) {
+            tile.removeClass('strips__strip--expanded');
+            // remove delay from inner text
+            tileText.css(
+              'transition',
+              'all 0.15s 0 cubic-bezier(0.23, 1, 0.32, 1)'
+            );
+            stripClose.removeClass('strip__close--show');
+            stripClose.css(
+              'transition',
+              'all 0.2s 0s cubic-bezier(0.23, 1, 0.32, 1)'
+            );
+            expanded = false;
+          }
+        };
+
+        var bindActions = function() {
+          tileLink.on('click', open);
+          stripClose.on('click', close);
+        };
+
+        var init = function() {
+          bindActions();
+        };
+
+        return {
+          init: init,
+        };
+      })();
+
+      Expand.init();
+    </script>
+  </body>
+</html>
