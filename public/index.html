@@ -1,131 +1,346 @@
 <!DOCTYPE html>
 <html>
+    
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <head>
+        <title>Bite Club</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    
+    .strips {
+        min-height: 100vh;
+        text-align: center;
+        overflow: hidden;
+        color: white;
+    }
+    .strips__strip {
+        will-change: width, left, z-index, height;
+        position: absolute;
+        width: 33.3333333333%;
+        min-height: 100vh;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .strips__strip:nth-child(1) {
+        left: 0;
+    }
+    .strips__strip:nth-child(2) {
+        left: 33.3333333333%;
+    }
+    .strips__strip:nth-child(3) {
+        left: 66.6666666667%;
+    }
+    .strips__strip:nth-child(1) .strip__content {
+        background: #46A2EB;
+        transform: translate3d(-100%, 0, 0);
+        animation-name: strip1;
+        animation-delay: 0.1s;
+    }
+    .strips__strip:nth-child(2) .strip__content {
+        background: #F8D778;
+        transform: translate3d(0, 100%, 0);
+        animation-name: strip2;
+        animation-delay: 0.2s;
+    }
+    .strips__strip:nth-child(3) .strip__content {
+        background: #474A4D;
+        transform: translate3d(0, -100%, 0);
+        animation-name: strip3;
+        animation-delay: 0.3s;
+    }
+    .strips__strip:nth-child(4) .strip__content {
+        background: #474A4D;
+        transform: translate3d(0, 100%, 0);
+        animation-name: strip4;
+        animation-delay: 0.4s;
+    }
+    .strips__strip:nth-child(5) .strip__content {
+        background: #474A4D;
+        transform: translate3d(100%, 0, 0);
+        animation-name: strip5;
+        animation-delay: 0.5s;
+    }
+    @media screen and (max-width: 760px) {
+        .strips__strip {
+            min-height: 20vh;
+        }
+        .strips__strip:nth-child(1) {
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .strips__strip:nth-child(2) {
+            top: 20vh;
+            left: 0;
+            width: 100%;
+        }
+        .strips__strip:nth-child(3) {
+            top: 40vh;
+            left: 0;
+            width: 100%;
+        }
+        .strips__strip:nth-child(4) {
+            top: 60vh;
+            left: 0;
+            width: 100%;
+        }
+        .strips__strip:nth-child(5) {
+            top: 80vh;
+            left: 0;
+            width: 100%;
+        }
+    }
+    .strips .strip__content {
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        animation-fill-mode: both;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+    }
+    .strips .strip__content:hover:before {
+        transform: skew(-30deg) scale(3) translate(0, 0);
+        opacity: 0.1;
+    }
+    .strips .strip__content:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        opacity: 0.05;
+        transform-origin: center center;
+        transform: skew(-30deg) scaleY(1) translate(0, 0);
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .strips .strip__inner-text {
+        will-change: transform, opacity;
+        position: absolute;
+        z-index: 5;
+        top: 50%;
+        left: 50%;
+        width: 70%;
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .strips__strip--expanded {
+        width: 100%;
+        top: 0 !important;
+        left: 0 !important;
+        z-index: 3;
+        cursor: default;
+    }
+    @media screen and (max-width: 760px) {
+        .strips__strip--expanded {
+            min-height: 100vh;
+        }
+    }
+    .strips__strip--expanded .strip__content:hover:before {
+        transform: skew(-30deg) scale(1) translate(0, 0);
+        opacity: 0.05;
+    }
+    .strips__strip--expanded .strip__title {
+        opacity: 0;
+    }
+    .strips__strip--expanded .strip__inner-text {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .strip__title {
+        display: block;
+        margin: 0;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        font-size: 3.5vw;
+        color: white;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    @media screen and (max-width: 760px) {
+        .strip__title {
+            font-size: 28px;
+        }
+    }
+    
+    .strip__close {
+        position: absolute;
+        right: 3vw;
+        top: 3vw;
+        opacity: 0;
+        z-index: 10;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        cursor: pointer;
+        transition-delay: 0.5s;
+    }
+    .strip__close--show {
+        opacity: 1;
+    }
+    
+    @keyframes strip1 {
+        0% {
+            transform: translate3d(-100%, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes strip2 {
+        0% {
+            transform: translate3d(0, 100%, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes strip3 {
+        0% {
+            transform: translate3d(0, -100%, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes strip4 {
+        0% {
+            transform: translate3d(0, 100%, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes strip5 {
+        0% {
+            transform: translate3d(100%, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    /* Demo purposes */
+    body {
+        font-family: "verdana";
+        -webkit-font-smoothing: antialiased;
+        text-rendering: geometricPrecision;
+        line-height: 1.5;
+    }
+    
+    h1, h2 {
+        font-weight: 300;
+    }
+    
+    .fa {
+        font-size: 30px;
+        color: white;
+    }
+    
+    h2 {
+        font-size: 36px;
+        margin: 0 0 16px;
+    }
+    
+    p {
+        margin: 0 0 16px;
+    }
+    
+    </style>
+    </head>
+    
+    <body>
+                  <section class="strips">
+                      <article class="strips__strip">
+                           <a href="restaurants.html">
+                          <div class="strip__content">
+                              <h1 class="strip__title" data-name="Dolor">For Restaurants</h1>
+                          </div>
+                           </a>
+                      </article>
+                      <article class="strips__strip">
+                          <a href="events.html">
+                          <div class="strip__content">
+                              <h1 class="strip__title" data-name="Sit">For Events</h1>
+                          </div>
+                          </a>
+                      </article>
+                      <article class="strips__strip">
+                          <a href="companies.html">
+                          <div class="strip__content">
+                              <h1 class="strip__title" data-name="Amet">For Companies</h1>
+                          </div>
+                          </a>
+                      </article>
+                      <i class="fa fa-close strip__close"></i>
+                  </section>
+                  
+                  <script type="text/javascript" src="js/jquery.js"></script>
+                  
+                  <script type="text/javascript" src="js/app.js"></script>
 
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<head>
-    <title>Magic Restaurants</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel='stylesheet' href='stylesheets/style.css' />
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Trofi" />
-</head>
-<body>
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-6 twi">
-
-            <div class="card shadow grow2">
-                <img class="profilePhoto" src="images/sm-sq.jpg" />
-                <h1>Bite Club</h1>
-
-                <div class="registration-form">
-                    <header>
-                        <h1>Sign Up</h1>
-                        <p>Improve Bottom Line. Viral Marketing. <br> No Risk. All This and More For Free.</p>
-                    </header>
-
-
-                    <form method="POST" id="trofi-form"  action="https://formspree.io/software.wbc@gmail.com">
-                        <div class="input-section email-section"><input class="email" type="text" name="resname" placeholder="Restaurant Name" autocomplete="off" />
-                            <div class="animated-button"><span class="icon-paper-plane"><i class="fas fa-utensils"></i></span><span class="next-button email"><i class="fa fa-arrow-up"></i></span></div>
-                        </div>
-                        <div class="input-section password-section folded"><input class="password" type="text" name="resaddress" placeholder="Restaurant Address" />
-                            <div class="animated-button"><span class="icon-lock"><i class="fas fa-map-marker-alt"></i></span><span class="next-button password"><i class="fa fa-arrow-up"></i></span></div>
-                        </div>
-                        <div class="input-section repeat-password-section folded"><input class="repeat-password" name="emailaddress" type="email" placeholder="Email Address" />
-                            <div class="animated-button" onClick="document.forms['trofi-form'].submit();"><span class="icon-repeat-lock"><i class="fas fa-envelope"></i></span><span class="next-button repeat-password"><i class="fa fa-paper-plane"></i></span></div>
-                        </div>
-                        <div class="success">
-                            <p>We'll Respond Shortly</p>
-                        </div>
-                    </form>
-                </div>
-                <img class="landinggraphic" src="images/homepagegraphic.png" />
-
-
-            </div>
-</div>
-
-<div class="col-lg-6">
-
-    <section class="featuredBlock">
-        <h1 class="stitle">What We Do:</h1>
-        <hr>
-            <div class="project shadow2 grow">
-                <div class="ptext" style="width: 100%">
-                    <h1>Our Restaurants Make Money, Our Users Save Money, and Your Competitors Pay.</h1>
-                </div>
-
-</div>
-        </a>
-
-    <section class="projects">
-        <h1 class="stitle">How We Do It:</h1>
-        <hr>
-            <div class="project shadow2 grow">
-                <div class="ptext">
-                    <h1> Restaurant Dashboard &nbsp;</h1>
-                    <p>A dashboard compatible with any device to completely control your income statement and offerings, and watch the orders fly in. </p>
-                </div>
-                <div class="bullets" <ul>
-                    <img src="images/controlcenter.png" class="controlcenter">
-                </a>
-
-            </ul>
-            </div>
-</div>
-    </a>
-        <div class="project shadow2 grow">
-            <div class="ptext">
-                <h1> Our Propriety Algorithm &nbsp;</h1>
-                <p>Our algorithm analyzes your hourly fixed and variable expenses, along with your desired profit margin, to provide customers with discounts when they guarantee the sales volume you need to improve your bottom line.</p>
-            </div>
-            <div class="bullets" <ul>
-                <img src="images/algorithm.png" class="algorithm">
-            </a>
-
-        </ul>
-        </div>
-</div>
-</a>
-
-<div>
-        <div class="project shadow2 grow">
-            <div class="ptext">
-                <h1> Viral App</h1>
-                <p>Our customers unlock higher hourly discounts as more purchases are made at your restaurant. This, along with many other social features, incentivizes them to share the app with their friends and bring you viral marketing and exposure at zero cost.</p>
-            </div>
-            <div class="bullets" <ul>
-                <img src="images/phonehomepage.png" class="phonehome">
-                <img src="images/VendorList.png" class="phonehome">
-            </a>
-        </ul>
-        </div>
-</div>
-
-<div class="popup2" id="popup1">
-    <div class="popup-inner">
-        <div class="popup__photo">
-            <img src="images/algorithmgraphic.png" style="width:100%">
-        </div>
-        <a class="popup__close" href="#">X</a>
-    </div>
-</div>
-
-</section>
-
-</div>
-</div>
-</div>
-
-<script type="text/javascript" src="js/jquery.js"></script>
-
-<script type="text/javascript" src="js/app.js"></script>
-
-
-</body>
+             <script>
+                 var Expand = (function() {
+                               var tile = $('.strips__strip');
+                               var tileLink = $('.strips__strip > .strip__content');
+                               var tileText = tileLink.find('.strip__inner-text');
+                               var stripClose = $('.strip__close');
+                               
+                               var expanded  = false;
+                               
+                               var open = function() {
+                               
+                               var tile = $(this).parent();
+                               
+                               if (!expanded) {
+                               tile.addClass('strips__strip--expanded');
+                               // add delay to inner text
+                               tileText.css('transition', 'all .5s .3s cubic-bezier(0.23, 1, 0.32, 1)');
+                               stripClose.addClass('strip__close--show');
+                               stripClose.css('transition', 'all .6s 1s cubic-bezier(0.23, 1, 0.32, 1)');
+                               expanded = true;
+                               }
+                               };
+                               
+                               var close = function() {
+                               if (expanded) {
+                               tile.removeClass('strips__strip--expanded');
+                               // remove delay from inner text
+                               tileText.css('transition', 'all 0.15s 0 cubic-bezier(0.23, 1, 0.32, 1)');
+                               stripClose.removeClass('strip__close--show');
+                               stripClose.css('transition', 'all 0.2s 0s cubic-bezier(0.23, 1, 0.32, 1)')
+                               expanded = false;
+                               }
+                               }
+                               
+                               var bindActions = function() {
+                               tileLink.on('click', open);
+                               stripClose.on('click', close);
+                               };
+                               
+                               var init = function() {
+                               bindActions();
+                               };
+                               
+                               return {
+                               init: init
+                               };
+                               
+                               }());
+                               
+                               Expand.init();
+                 </script>
+             
+    </body>
