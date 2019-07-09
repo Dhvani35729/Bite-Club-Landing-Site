@@ -31,6 +31,12 @@ border-radius: 1%;
   margin-top: 0px;
 }
 
+.faqBlock {
+    width: 90%;
+    margin-top: 30px;
+
+}
+
 .card {
     background-image: radial-gradient(circle, #52a6e1, #4aa3e2, #42a1e4, #399ee5, #309be6);
     padding: 20px;
@@ -39,7 +45,7 @@ border-radius: 1%;
   font-family: "arial";
   transition: all .6s cubic-bezier(0,.5,.51,1);
   margin-top: 0px;
-    height: 805px;
+    height: 665px;
 }
 
 
@@ -97,7 +103,14 @@ margin-top: 8%;
 .ptext {
     font-family: "arial";
   float: left;
-  width: 50%;
+  width: 100%;
+}
+
+.faqtext {
+    font-family: "arial";
+    float: left;
+    width: 100%;
+    font-size: 10;
 }
 
 .bullets {
