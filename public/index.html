@@ -20,7 +20,7 @@
       .strips__strip {
         will-change: width, left, z-index, height;
         position: absolute;
-        width: 33.3333333333%;
+        width: 50%;
         min-height: 100vh;
         overflow: hidden;
         cursor: pointer;
@@ -30,11 +30,11 @@
         left: 0;
       }
       .strips__strip:nth-child(2) {
-        left: 33.3333333333%;
+        left: 50%;
       }
-      .strips__strip:nth-child(3) {
+      /* .strips__strip:nth-child(3) {
         left: 66.6666666667%;
-      }
+      } */
       .strips__strip:nth-child(1) .strip__content {
         background: #46a2eb;
         transform: translate3d(-100%, 0, 0);
@@ -265,23 +265,16 @@
   <body>
     <section class="strips">
       <article class="strips__strip">
-        <a href="restaurants.html">
+        <a href="restaurants">
           <div class="strip__content">
             <h1 class="strip__title" data-name="Dolor">For Restaurants</h1>
           </div>
         </a>
       </article>
       <article class="strips__strip">
-        <a href="events.html">
+        <a href="events">
           <div class="strip__content">
             <h1 class="strip__title" data-name="Sit">For Events</h1>
-          </div>
-        </a>
-      </article>
-      <article class="strips__strip">
-        <a href="companies.html">
-          <div class="strip__content">
-            <h1 class="strip__title" data-name="Amet">For Companies</h1>
           </div>
         </a>
       </article>
