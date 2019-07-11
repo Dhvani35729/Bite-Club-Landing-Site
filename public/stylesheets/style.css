@@ -397,6 +397,17 @@ body {
     #f7d26b
   );
 }
+
+.c-forms-heading {
+  display: none !important;
+}
+.cognito .c-field.c-required .c-label:after,
+.cognito .c-rating-scale.c-required .c-choice-question:after {
+  font-weight: bold;
+  color: #efc242 !important;
+  font-style: normal;
+}
+
 .animated-button span {
   display: flex;
   flex-direction: row;
