@@ -1,350 +1,355 @@
 <!DOCTYPE html>
 <html>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-  <head>
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
     <title>Bite Club</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
     <link rel="shortcut icon" type="image/png" href="images/sm-sq.jpg" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel='stylesheet' href='stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-    <style>
-      * {
-        box-sizing: border-box;
-      }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trofi" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+</head>
 
-      .strips {
-        min-height: 100vh;
-        text-align: center;
-        overflow: hidden;
-        color: white;
-      }
-      .strips__strip {
-        will-change: width, left, z-index, height;
-        position: absolute;
-        width: 50%;
-        min-height: 100vh;
-        overflow: hidden;
-        cursor: pointer;
-        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-      }
-      .strips__strip:nth-child(1) {
-        left: 0;
-      }
-      .strips__strip:nth-child(2) {
-        left: 50%;
-      }
-      /* .strips__strip:nth-child(3) {
-        left: 66.6666666667%;
-      } */
-      .strips__strip:nth-child(1) .strip__content {
-        background: #46a2eb;
-        transform: translate3d(-100%, 0, 0);
-        animation-name: strip1;
-        animation-delay: 0.1s;
-      }
-      .strips__strip:nth-child(2) .strip__content {
-        background: #efc242;
-        transform: translate3d(0, 100%, 0);
-        animation-name: strip2;
-        animation-delay: 0.2s;
-      }
-      .strips__strip:nth-child(3) .strip__content {
-        background: #474a4d;
-        transform: translate3d(0, -100%, 0);
-        animation-name: strip3;
-        animation-delay: 0.3s;
-      }
-      .strips__strip:nth-child(4) .strip__content {
-        background: #474a4d;
-        transform: translate3d(0, 100%, 0);
-        animation-name: strip4;
-        animation-delay: 0.4s;
-      }
-      .strips__strip:nth-child(5) .strip__content {
-        background: #474a4d;
-        transform: translate3d(100%, 0, 0);
-        animation-name: strip5;
-        animation-delay: 0.5s;
-      }
-      @media screen and (max-width: 760px) {
-        .strips__strip {
-          min-height: 20vh;
-        }
-        .strips__strip:nth-child(1) {
-          top: 0;
-          left: 0;
-          width: 100%;
-        }
-        .strips__strip:nth-child(2) {
-          top: 20vh;
-          left: 0;
-          width: 100%;
-        }
-        .strips__strip:nth-child(3) {
-          top: 40vh;
-          left: 0;
-          width: 100%;
-        }
-        .strips__strip:nth-child(4) {
-          top: 60vh;
-          left: 0;
-          width: 100%;
-        }
-        .strips__strip:nth-child(5) {
-          top: 80vh;
-          left: 0;
-          width: 100%;
-        }
-      }
-      .strips .strip__content {
-        animation-duration: 1s;
-        animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-        animation-fill-mode: both;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        text-decoration: none;
-      }
-      .strips .strip__content:hover:before {
-        transform: skew(-30deg) scale(3) translate(0, 0);
-        opacity: 0.1;
-      }
-      .strips .strip__content:before {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: white;
-        opacity: 0.05;
-        transform-origin: center center;
-        transform: skew(-30deg) scaleY(1) translate(0, 0);
-        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-      }
-      .strips .strip__inner-text {
-        will-change: transform, opacity;
-        position: absolute;
-        z-index: 5;
-        top: 50%;
-        left: 50%;
-        width: 70%;
-        transform: translate(-50%, -50%) scale(0.5);
-        opacity: 0;
-        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-      }
-      .strips__strip--expanded {
-        width: 100%;
-        top: 0 !important;
-        left: 0 !important;
-        z-index: 3;
-        cursor: default;
-      }
-      @media screen and (max-width: 760px) {
-        .strips__strip--expanded {
-          min-height: 100vh;
-        }
-      }
-      .strips__strip--expanded .strip__content:hover:before {
-        transform: skew(-30deg) scale(1) translate(0, 0);
-        opacity: 0.05;
-      }
-      .strips__strip--expanded .strip__title {
-        opacity: 0;
-      }
-      .strips__strip--expanded .strip__inner-text {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-      }
+<body>
 
-      .strip__title {
-        display: block;
-        margin: 0;
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        font-size: 3.5vw;
-        color: white;
-        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-      }
-      @media screen and (max-width: 760px) {
-        .strip__title {
-          font-size: 28px;
-        }
-      }
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 twi">
 
-      .strip__close {
-        position: absolute;
-        right: 3vw;
-        top: 3vw;
-        opacity: 0;
-        z-index: 10;
-        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-        cursor: pointer;
-        transition-delay: 0.5s;
-      }
-      .strip__close--show {
-        opacity: 1;
-      }
+                <div class="card shadow grow2">
+                    <img class="profilePhoto" src="images/sm-sq.jpg" />
+                    <h1>Bite Club Quote Request</h1>
+                    <p>Note: You must submit this request 4 days before the pickup date</p>
 
-      @keyframes strip1 {
-        0% {
-          transform: translate3d(-100%, 0, 0);
-        }
-        100% {
-          transform: translate3d(0, 0, 0);
-        }
-      }
-      @keyframes strip2 {
-        0% {
-          transform: translate3d(0, 100%, 0);
-        }
-        100% {
-          transform: translate3d(0, 0, 0);
-        }
-      }
-      @keyframes strip3 {
-        0% {
-          transform: translate3d(0, -100%, 0);
-        }
-        100% {
-          transform: translate3d(0, 0, 0);
-        }
-      }
-      @keyframes strip4 {
-        0% {
-          transform: translate3d(0, 100%, 0);
-        }
-        100% {
-          transform: translate3d(0, 0, 0);
-        }
-      }
-      @keyframes strip5 {
-        0% {
-          transform: translate3d(100%, 0, 0);
-        }
-        100% {
-          transform: translate3d(0, 0, 0);
-        }
-      }
-      /* Demo purposes */
-      body {
-        font-family: 'verdana';
-        -webkit-font-smoothing: antialiased;
-        text-rendering: geometricPrecision;
-        line-height: 1.5;
-        margin: 0 !important;
-      }
+                    <div class="ui large buttons formMenu">
+                        <button id="firstTimeUser" class="ui button">First time</button>
+                        <div class="or"></div>
+                        <button id="existingUser" class="ui button">Existing user</button>
+                    </div>
+                    <!-- <form class="ui fluid form"> -->
 
-      h1,
-      h2 {
-        font-weight: 300;
-      }
+                            <div class="ui hidden action input existingUserCodeInput">
+                                <input type="text" id="existingUserCode" placeholder="Your code...">
+                                <button id="searchCode" class="ui icon button">
+                                    <i class="search icon"></i>
+                                </button>
+                            </div>
+                            <div class="ui pointing red basic hidden label eventCodeError">
+                                Error, event not found.
+                            </div>
 
-      .fa {
-        font-size: 30px;
-        color: white;
-      }
+                        <div class="cognito">
+                            <script src="https://services.cognitoforms.com/s/i683xEX7q0WmWMhnPHhkDw"></script>
+                            <!-- <script>Cognito.load("forms", { id: "2" });</script> -->
+                        </div>
 
-      h2 {
-        font-size: 36px;
-        margin: 0 0 16px;
-      }
+                </div>
+            </div>
 
-      p {
-        margin: 0 0 16px;
-      }
-    </style>
-  </head>
+            <div class="col-lg-6">
 
-  <body>
-    <section class="strips">
-      <article class="strips__strip">
-        <a href="restaurants">
-          <div class="strip__content">
-            <h1 class="strip__title" data-name="Dolor">For Restaurants</h1>
-          </div>
-        </a>
-      </article>
-      <article class="strips__strip">
-        <a href="events">
-          <div class="strip__content">
-            <h1 class="strip__title" data-name="Sit">For Events</h1>
-          </div>
-        </a>
-      </article>
-      <i class="fa fa-close strip__close"></i>
-    </section>
+                <section class="featuredBlock">
+                    <h1 class="stitle">What We Do:</h1>
+                    <hr>
+                    <div class="project shadow2 grow">
+                        <div class="ptext" style="width: 100%">
+                            <h1>Provide High-Quality Food from Local Restaurants of Your Choice for an Exclusively Low
+                                Price.</h1>
+                        </div>
+
+                    </div>
+
+                    <section class="projects">
+                        <h1 class="stitle">FAQ</h1>
+                        <hr>
+                        <div class="faqtext" style="width: 100%">
+                            <h5>Why Should I Use Bite Club?</h5>
+                            <h12> Support local businesses. Buying from local restaurants instead of chain competitors
+                                recirculates three times as much money back into the community. We direct high-volume
+                                sales towards these businesses and increase their bottom line.
+                            </h12>
+                            <h12> Get exclusively low prices. We combine the sales volume of all large orders at a
+                                restaurant into one and unlock the highest discount possible for every participating
+                                customer. These exclusive discounts will save your tight budget.
+                            </h12>
+                            <h12> Choose from a vast selection of restaurants. We got you covered for every cuisine,
+                                date and time, delivery option, distance, and price range you could hope for.
+                            </h12>
+                        </div>
+                    </section>
+
+            </div>
+        </div>
+        <div class="row">
+            <section class="restaurants-list">
+                <div class="limiter">
+                    <div class="container-table100">
+                        <div class="wrap-table100">
+                            <div class="table100 ver1 m-b-110">
+                                <div class="table100-head">
+                                    <table>
+                                        <thead>
+                                            <tr class="row100 head">
+                                                <th class="cell100 column1">Class name</th>
+                                                <th class="cell100 column2">Type</th>
+                                                <th class="cell100 column3">Hours</th>
+                                                <th class="cell100 column4">Trainer</th>
+                                                <th class="cell100 column5">Spots</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                                <div class="table100-body js-pscroll">
+                                    <table>
+                                        <tbody>
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Like a butterfly</td>
+                                                <td class="cell100 column2">Boxing</td>
+                                                <td class="cell100 column3">9:00 AM - 11:00 AM</td>
+                                                <td class="cell100 column4">Aaron Chapman</td>
+                                                <td class="cell100 column5">10</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Mind & Body</td>
+                                                <td class="cell100 column2">Yoga</td>
+                                                <td class="cell100 column3">8:00 AM - 9:00 AM</td>
+                                                <td class="cell100 column4">Adam Stewart</td>
+                                                <td class="cell100 column5">15</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Crit Cardio</td>
+                                                <td class="cell100 column2">Gym</td>
+                                                <td class="cell100 column3">9:00 AM - 10:00 AM</td>
+                                                <td class="cell100 column4">Aaron Chapman</td>
+                                                <td class="cell100 column5">10</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Wheel Pose Full Posture</td>
+                                                <td class="cell100 column2">Yoga</td>
+                                                <td class="cell100 column3">7:00 AM - 8:30 AM</td>
+                                                <td class="cell100 column4">Donna Wilson</td>
+                                                <td class="cell100 column5">15</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Playful Dancer's Flow</td>
+                                                <td class="cell100 column2">Yoga</td>
+                                                <td class="cell100 column3">8:00 AM - 9:00 AM</td>
+                                                <td class="cell100 column4">Donna Wilson</td>
+                                                <td class="cell100 column5">10</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Zumba Dance</td>
+                                                <td class="cell100 column2">Dance</td>
+                                                <td class="cell100 column3">5:00 PM - 7:00 PM</td>
+                                                <td class="cell100 column4">Donna Wilson</td>
+                                                <td class="cell100 column5">20</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Cardio Blast</td>
+                                                <td class="cell100 column2">Gym</td>
+                                                <td class="cell100 column3">5:00 PM - 7:00 PM</td>
+                                                <td class="cell100 column4">Randy Porter</td>
+                                                <td class="cell100 column5">10</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Pilates Reformer</td>
+                                                <td class="cell100 column2">Gym</td>
+                                                <td class="cell100 column3">8:00 AM - 9:00 AM</td>
+                                                <td class="cell100 column4">Randy Porter</td>
+                                                <td class="cell100 column5">10</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Supple Spine and Shoulders</td>
+                                                <td class="cell100 column2">Yoga</td>
+                                                <td class="cell100 column3">6:30 AM - 8:00 AM</td>
+                                                <td class="cell100 column4">Randy Porter</td>
+                                                <td class="cell100 column5">15</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Yoga for Divas</td>
+                                                <td class="cell100 column2">Yoga</td>
+                                                <td class="cell100 column3">9:00 AM - 11:00 AM</td>
+                                                <td class="cell100 column4">Donna Wilson</td>
+                                                <td class="cell100 column5">20</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Virtual Cycle</td>
+                                                <td class="cell100 column2">Gym</td>
+                                                <td class="cell100 column3">8:00 AM - 9:00 AM</td>
+                                                <td class="cell100 column4">Randy Porter</td>
+                                                <td class="cell100 column5">20</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Like a butterfly</td>
+                                                <td class="cell100 column2">Boxing</td>
+                                                <td class="cell100 column3">9:00 AM - 11:00 AM</td>
+                                                <td class="cell100 column4">Aaron Chapman</td>
+                                                <td class="cell100 column5">10</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Mind & Body</td>
+                                                <td class="cell100 column2">Yoga</td>
+                                                <td class="cell100 column3">8:00 AM - 9:00 AM</td>
+                                                <td class="cell100 column4">Adam Stewart</td>
+                                                <td class="cell100 column5">15</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Crit Cardio</td>
+                                                <td class="cell100 column2">Gym</td>
+                                                <td class="cell100 column3">9:00 AM - 10:00 AM</td>
+                                                <td class="cell100 column4">Aaron Chapman</td>
+                                                <td class="cell100 column5">10</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Wheel Pose Full Posture</td>
+                                                <td class="cell100 column2">Yoga</td>
+                                                <td class="cell100 column3">7:00 AM - 8:30 AM</td>
+                                                <td class="cell100 column4">Donna Wilson</td>
+                                                <td class="cell100 column5">15</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Playful Dancer's Flow</td>
+                                                <td class="cell100 column2">Yoga</td>
+                                                <td class="cell100 column3">8:00 AM - 9:00 AM</td>
+                                                <td class="cell100 column4">Donna Wilson</td>
+                                                <td class="cell100 column5">10</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Zumba Dance</td>
+                                                <td class="cell100 column2">Dance</td>
+                                                <td class="cell100 column3">5:00 PM - 7:00 PM</td>
+                                                <td class="cell100 column4">Donna Wilson</td>
+                                                <td class="cell100 column5">20</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Cardio Blast</td>
+                                                <td class="cell100 column2">Gym</td>
+                                                <td class="cell100 column3">5:00 PM - 7:00 PM</td>
+                                                <td class="cell100 column4">Randy Porter</td>
+                                                <td class="cell100 column5">10</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Pilates Reformer</td>
+                                                <td class="cell100 column2">Gym</td>
+                                                <td class="cell100 column3">8:00 AM - 9:00 AM</td>
+                                                <td class="cell100 column4">Randy Porter</td>
+                                                <td class="cell100 column5">10</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Supple Spine and Shoulders</td>
+                                                <td class="cell100 column2">Yoga</td>
+                                                <td class="cell100 column3">6:30 AM - 8:00 AM</td>
+                                                <td class="cell100 column4">Randy Porter</td>
+                                                <td class="cell100 column5">15</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Yoga for Divas</td>
+                                                <td class="cell100 column2">Yoga</td>
+                                                <td class="cell100 column3">9:00 AM - 11:00 AM</td>
+                                                <td class="cell100 column4">Donna Wilson</td>
+                                                <td class="cell100 column5">20</td>
+                                            </tr>
+
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">Virtual Cycle</td>
+                                                <td class="cell100 column2">Gym</td>
+                                                <td class="cell100 column3">8:00 AM - 9:00 AM</td>
+                                                <td class="cell100 column4">Randy Porter</td>
+                                                <td class="cell100 column5">20</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+
+    </div>
+
+
+    <!-- <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script> -->
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="semantic/semantic.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script>
+        $('.js-pscroll').each(function () {
+            var ps = new PerfectScrollbar(this);
+
+            $(window).on('resize', function () {
+                ps.update();
+            })
+        });
+
+
+    </script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
 
     <script type="text/javascript" src="js/jquery.js"></script>
 
     <script type="text/javascript" src="js/app.js"></script>
 
-    <script>
-      var Expand = (function() {
-        var tile = $('.strips__strip');
-        var tileLink = $('.strips__strip > .strip__content');
-        var tileText = tileLink.find('.strip__inner-text');
-        var stripClose = $('.strip__close');
 
-        var expanded = false;
-
-        var open = function() {
-          var tile = $(this).parent();
-
-          if (!expanded) {
-            tile.addClass('strips__strip--expanded');
-            // add delay to inner text
-            tileText.css(
-              'transition',
-              'all .5s .3s cubic-bezier(0.23, 1, 0.32, 1)'
-            );
-            stripClose.addClass('strip__close--show');
-            stripClose.css(
-              'transition',
-              'all .6s 1s cubic-bezier(0.23, 1, 0.32, 1)'
-            );
-            expanded = true;
-          }
-        };
-
-        var close = function() {
-          if (expanded) {
-            tile.removeClass('strips__strip--expanded');
-            // remove delay from inner text
-            tileText.css(
-              'transition',
-              'all 0.15s 0 cubic-bezier(0.23, 1, 0.32, 1)'
-            );
-            stripClose.removeClass('strip__close--show');
-            stripClose.css(
-              'transition',
-              'all 0.2s 0s cubic-bezier(0.23, 1, 0.32, 1)'
-            );
-            expanded = false;
-          }
-        };
-
-        var bindActions = function() {
-          tileLink.on('click', open);
-          stripClose.on('click', close);
-        };
-
-        var init = function() {
-          bindActions();
-        };
-
-        return {
-          init: init,
-        };
-      })();
-
-      Expand.init();
-    </script>
-  </body>
-</html>
+</body>

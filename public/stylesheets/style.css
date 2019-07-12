@@ -7,6 +7,25 @@ body {
   margin-top: 40px;
 }
 
+.formMenu {
+  margin-top: 110px !important;
+}
+
+.existingUserCodeInput {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 30px !important;
+}
+
+.eventCodeError {
+  width: 50%;
+  margin-left: 20% !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
 ul {
   list-style: none;
 }
@@ -148,7 +167,7 @@ ul {
 }
 
 .grow2 {
-  height: auto;
+  height: 100%;
   transition: all 0.24s cubic-bezier(0, 0.5, 0.51, 1);
 }
 .grow2:hover {
