@@ -20,6 +20,8 @@ $ (window).on ('resize scroll', function () {
 });
 
 (function () {
+  $ ('table').tablesort ();
+
   const restTable = document.getElementsByClassName ('restaurants-list');
   if (elementInViewport (restTable)) {
     $ ('#scrollDownBtn').hide ();

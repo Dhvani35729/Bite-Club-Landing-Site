@@ -23,7 +23,8 @@
 
     <div class="container">
         <div class="row">
-        <button id="scrollDownBtn" class="circular ui secondary icon button"><i class="arrow large circle down icon"></i></button>
+            <button id="scrollDownBtn" class="circular ui secondary icon button"><i
+                    class="arrow large circle down icon"></i></button>
 
             <div class="col-lg-6 twi">
 
@@ -111,47 +112,61 @@
                     </section>
 
 
-                <section class="contact">
-                    <h1 class="stitle">Contact</h1>
-                    <hr>
-                    <a href="mailto:outreach@uwbiteclub.com">
-                    <div class="ui large label">
-                            <i class="mail icon"></i> outreach@uwbiteclub.com
-                          </div>
+                    <section class="contact">
+                        <h1 class="stitle">Contact</h1>
+                        <hr>
+                        <a href="mailto:outreach@uwbiteclub.com">
+                            <div class="ui large label">
+                                <i class="mail icon"></i> outreach@uwbiteclub.com
+                            </div>
                         </a>
-                </section>
+                    </section>
 
 
             </div>
         </div>
         <div class="row">
             <section class="restaurants-list">
-                    <h1 id="tableTitle">Restaurants</h1>
-                    <hr>
-                    <table class="ui celled table">
-                            <thead>
-                              <tr><th>Name</th>
-                              <th>Age</th>
-                              <th>Job</th>
-                            </tr></thead>
-                            <tbody>
-                              <tr>
-                                <td data-label="Name">James</td>
-                                <td data-label="Age">24</td>
-                                <td data-label="Job">Engineer</td>
-                              </tr>
-                              <tr>
-                                <td data-label="Name">Jill</td>
-                                <td data-label="Age">26</td>
-                                <td data-label="Job">Engineer</td>
-                              </tr>
-                              <tr>
-                                <td data-label="Name">Elyse</td>
-                                <td data-label="Age">24</td>
-                                <td data-label="Job">Designer</td>
-                              </tr>
-                            </tbody>
-                          </table>
+                <h1 id="tableTitle">Restaurants</h1>
+                <hr>
+                <table class="ui striped selectable sortable celled table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Rating</th>
+                            <th>Location</th>
+                            <th>Price Range</th>
+                            <th>Hourly notice</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Name">Fresh Burrito</td>
+                            <td data-label="Type">Mexican</td>
+                            <td data-label="Rating">4.3/5.0</td>
+                            <td data-label="Location">170 University Ave W Unit 31, Waterloo</td>
+                            <td data-label="Price Range">$$$</td>
+                            <td data-label="Hourly notice">48-72 hours</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Name">Fresh Burrito</td>
+                            <td data-label="Type">Mexican</td>
+                            <td data-label="Rating">4.3/5.0</td>
+                            <td data-label="Location">170 University Ave W Unit 31, Waterloo</td>
+                            <td data-label="Price Range">$$$</td>
+                            <td data-label="Hourly notice">48-72 hours</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Name">Fresh Burrito</td>
+                            <td data-label="Type">Mexican</td>
+                            <td data-label="Rating">4.3/5.0</td>
+                            <td data-label="Location">170 University Ave W Unit 31, Waterloo</td>
+                            <td data-label="Price Range">$$$</td>
+                            <td data-label="Hourly notice">48-72 hours</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
         </div>
 
@@ -162,6 +177,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="semantic/semantic.min.js"></script>
+    <script src="semantic/tablesort.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
 
 
