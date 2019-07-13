@@ -11,6 +11,10 @@ body {
   margin-top: 110px !important;
 }
 
+.golden {
+  background-color: #efc242 !important;
+}
+
 .existingUserCodeInput {
   width: 60%;
   margin-left: 20%;

@@ -10,6 +10,8 @@ $ ('.next-button').hover (function () {
   $ (this).css ('cursor', 'pointer');
 });
 
+$ ('.ui.accordion').accordion ();
+
 $ ('.next-button.email').click (function () {
   console.log ('Something');
   $ ('.email-section').addClass ('fold-up');
