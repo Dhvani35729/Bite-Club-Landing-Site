@@ -61,7 +61,40 @@ $ ('.next-button.email').click (function () {
 });
 
 $ ('#loadFreshBurritoMenu').click (function () {
-  $ ('.ui.modal.freshBurrito').modal ('show');
+  $ ('.ui.modal.menu').modal ('show');
+  $ ('#resMenu').attr ('src', 'https://freshburrito.ca/our-menu/');
+});
+
+$ ('#loadShawermaPlusMenu').click (function () {
+  $ ('.ui.modal.menu').modal ('show');
+  $ ('#resMenu').attr ('src', 'https://www.shawermaplus.com/menu/wraps');
+});
+
+$ ('#loadCampusPizzaMenu').click (function () {
+  $ ('.ui.modal.menu').modal ('show');
+  $ ('#resMenu').attr ('src', 'http://www.campuspizza.ca/?page=menu');
+});
+
+$ ('#loadAuntysKitchenMenu').click (function () {
+  $ ('.ui.modal.menu').modal ('show');
+  $ ('#resMenu').attr ('src', 'https://www.auntyskitchen.ca/catering');
+});
+
+$ ('#loadSubwayMenu').click (function () {
+  $ ('.ui.modal.menu').modal ('show');
+  $ ('#resMenu').attr (
+    'src',
+    'https://www.subway.com/en-US/Catering/CateringProducts'
+  );
+});
+
+$ ('#loadKabobHutMenu').click (function () {
+  $ ('.ui.modal.menu').modal ('show');
+  $ ('#resMenu').attr ('src', 'http://www.kabobhutcanada.com/#menu');
+});
+
+$ ('#loadiPotatoMenu').click (function () {
+  $ ('.nomenu').modal ('show');
 });
 
 $ ('#firstTimeUser').click (function () {
