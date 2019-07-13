@@ -60,6 +60,10 @@ $ ('.next-button.email').click (function () {
   $ ('.password-section').removeClass ('folded');
 });
 
+$ ('#loadFreshBurritoMenu').click (function () {
+  $ ('.ui.modal.freshBurrito').modal ('show');
+});
+
 $ ('#firstTimeUser').click (function () {
   $ ('#firstTimeUser').addClass ('loading');
   Cognito.load ('forms', {id: '2'});
