@@ -6,11 +6,14 @@ function elementInViewport (el) {
   return elementBottom > viewportTop && elementTop < viewportBottom;
 }
 
+var bouncer = null;
+
 $ (window).on ('resize scroll', function () {
   //Code here
   const restTable = document.getElementsByClassName ('restaurants-list');
   if (elementInViewport (restTable)) {
     $ ('#scrollDownBtn').hide ();
+    clearInterval (bouncer);
   } else {
     $ ('#scrollDownBtn').show ();
   }
@@ -24,7 +27,7 @@ $ (window).on ('resize scroll', function () {
     $ ('#scrollDownBtn').show ();
   }
 
-  setInterval (function () {
+  bouncer = setInterval (function () {
     const restTable = document.getElementsByClassName ('restaurants-list');
     if (elementInViewport (restTable)) {
       $ ('#scrollDownBtn').hide ();
