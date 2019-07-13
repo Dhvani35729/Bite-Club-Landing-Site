@@ -14,8 +14,7 @@ body {
   z-index: 99;
   border: none;
   outline: none;
-  padding: 15px;
-  border-radius: 4px;
+  border-radius: 7px;
 }
 
 .formMenu {
