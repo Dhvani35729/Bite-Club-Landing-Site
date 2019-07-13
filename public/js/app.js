@@ -1,3 +1,40 @@
+function elementInViewport (el) {
+  var elementTop = $ (el).offset ().top;
+  var elementBottom = elementTop + $ (el).outerHeight ();
+  var viewportTop = $ (window).scrollTop ();
+  var viewportBottom = viewportTop + $ (window).height ();
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+}
+
+$ (window).on ('resize scroll', function () {
+  //Code here
+  const restTable = document.getElementsByClassName ('restaurants-list');
+  if (elementInViewport (restTable)) {
+    $ ('#scrollDownBtn').hide ();
+  } else {
+    $ ('#scrollDownBtn').show ();
+  }
+});
+
+(function () {
+  const restTable = document.getElementsByClassName ('restaurants-list');
+  if (elementInViewport (restTable)) {
+    $ ('#scrollDownBtn').hide ();
+  } else {
+    $ ('#scrollDownBtn').show ();
+  }
+
+  setInterval (function () {
+    const restTable = document.getElementsByClassName ('restaurants-list');
+    if (elementInViewport (restTable)) {
+      $ ('#scrollDownBtn').hide ();
+    } else {
+      $ ('#scrollDownBtn').show ();
+      $ ('#scrollDownBtn').transition ('bounce', '1500ms');
+    }
+  }, 5000);
+}) ();
+
 $ ('.email').on ('change keyup paste', function () {
   if ($ (this).val ()) {
     $ ('.icon-paper-plane').addClass ('next');
@@ -19,6 +56,7 @@ $ ('.next-button.email').click (function () {
 });
 
 $ ('#firstTimeUser').click (function () {
+  $ ('#firstTimeUser').addClass ('loading');
   Cognito.load ('forms', {id: '2'});
   $ ('.formMenu').hide ();
   $ ('.existingUserCodeInput').addClass ('hidden');
@@ -27,6 +65,10 @@ $ ('#firstTimeUser').click (function () {
 
 $ ('#existingUser').click (function () {
   $ ('.existingUserCodeInput').removeClass ('hidden');
+});
+
+$ ('#scrollDownBtn').click (function () {
+  $ ('html, body').animate ({scrollTop: document.body.scrollHeight}, 'slow');
 });
 
 $ ('#existingUserCode').on ('input', function () {
