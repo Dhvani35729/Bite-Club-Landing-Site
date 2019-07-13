@@ -93,6 +93,15 @@ $ ('#loadKabobHutMenu').click (function () {
   $ ('#resMenu').attr ('src', 'http://www.kabobhutcanada.com/#menu');
 });
 
+$ ('.ui.modal.menu').modal ({
+  onHide: function () {
+    $ ('#resMenu').attr ('src', '');
+  },
+  onShow: function () {
+    console.log ('shown');
+  },
+});
+
 $ ('#loadiPotatoMenu').click (function () {
   $ ('.nomenu').modal ('show');
 });
