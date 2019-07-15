@@ -20,6 +20,52 @@ $ (window).on ('resize scroll', function () {
 });
 
 (function () {
+  // Get a reference to the table
+  let tableRef = document.getElementById ('allRestaurants');
+  fetch ('https://dashboard.uwbiteclub.com/api/biteclub/restaurants')
+    .then (res => res.json ())
+    .then (response => {
+      console.log (response);
+      if (response.hasOwnProperty ('list')) {
+        const all_restaurants = response['list'];
+        all_restaurants.forEach (restaurant => {
+          // Insert a row at the end of the table
+          let newRow = tableRef.insertRow (-1);
+
+          // Insert a cell in the row at index 0
+          let newCell = newRow.insertCell (0);
+          // Append a text node to the cell
+          let newText = document.createTextNode (restaurant['name']);
+          newCell.appendChild (newText);
+
+          newCell = newRow.insertCell (1);
+          restaurant['categories'].forEach (category => {
+            let newText = document.createElement ('div');
+            newText.setAttribute ('class', 'ui label');
+            newText.textContent = category;
+            newCell.appendChild (newText);
+          });
+
+          newCell = newRow.insertCell (2);
+          newText = document.createTextNode (restaurant['rating']);
+          newCell.appendChild (newText);
+
+          newCell = newRow.insertCell (3);
+          newText = document.createTextNode (
+            restaurant['address'].slice (0, -1).join ()
+          );
+          newCell.appendChild (newText);
+
+          newCell = newRow.insertCell (4);
+          newText = document.createTextNode (restaurant['price']);
+          newCell.appendChild (newText);
+        });
+        $ ('#loadingRestaurants').hide ();
+        $ ('#allRestaurants').removeClass ('hidden');
+      }
+    })
+    .catch (error => console.error ('Error:', error));
+
   $ ('table').tablesort ();
 
   const restTable = document.getElementsByClassName ('restaurants-list');
