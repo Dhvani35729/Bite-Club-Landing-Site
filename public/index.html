@@ -95,6 +95,21 @@
                             </div>
                             <div class="title">
                                 <i class="dropdown icon"></i>
+                                How does Bite Club work?
+                            </div>
+                            <div class="content">
+                                <ol>
+                                    <li>Fill out the form.</li>
+                                    <li>Update the form when you have upcoming events. The more time you give us, the
+                                        better your budget will feel.</li>
+                                    <li>Recieve the best offer possible for your favorite restaurant.</li>
+                                    <li>Select what menu items and quantities you would like to order, or let us take
+                                        care of it for you.</li>
+                                    <li>Make a payment to the restaurant and pick up your order.</li>
+                                </ol>
+                            </div>
+                            <div class="title">
+                                <i class="dropdown icon"></i>
                                 Which restaurants can I order from?
                             </div>
                             <div class="content">
@@ -131,8 +146,7 @@
                 <h1 id="tableTitle">Restaurants</h1>
                 <h5>Click on a row to see the menu.</h5>
                 <hr>
-                <div id="loadingRestaurants" class="ui active centered inline loader"></div>
-                <table id="allRestaurants" class="ui hidden striped selectable sortable celled table">
+                <table class="ui striped selectable sortable celled table">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -140,15 +154,118 @@
                             <th>Rating</th>
                             <th>Location</th>
                             <th>Price Range</th>
+                            <th>Menu</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr id="loadFreshBurritoMenu">
+                            <td data-label="Name">Fresh Burrito</td>
+                            <td data-label="Type">
+                                <div class="ui label">Mexican</div>
+                            </td>
+                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
+                                    class="star icon yellow"></i><i class="star icon yellow"></i><i
+                                    class="star half icon yellow"></i></td>
+                            <td data-label="Location">170 University Ave W Unit 31, N2L 3E9</td>
+                            <td data-label="Price Range"><i class="dollar sign icon"></i></td>
+                            <td data-label="Menu"><button class="ui primary button">
+                                    Show Menu
+                                </button></td>
+                        </tr>
+                        <tr id="loadDoShackMenu">
+                            <td data-label="Name">DōShack</td>
+                            <td data-label="Type">
+                                <div class="ui label">Italian</div>
+                                <div class="ui label">Pizza</div>
+                            </td>
+                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
+                                    class="star icon half yellow"></i></td>
+                            <td data-label="Location">160 Univeristy Avenue W Waterloo, ON N2L 3E9</td>
+                            <td data-label="Price Range"><i class="dollar sign icon"></i><i
+                                    style=" margin-left: -10px; " class="dollar sign icon"></i></td>
+                                    <td data-label="Menu"><button class="ui primary button">
+                                            Show Menu
+                                        </button></td>
+                        </tr>
+                        <tr id="loadShawermaPlusMenu">
+                            <td data-label="Name">Shawerma Plus</td>
+                            <td data-label="Type">
+                                <div class="ui label">Middle Eastern</div>
+                            </td>
+                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
+                                    class="star icon yellow"></i><i class="star icon yellow"></i><i
+                                    class="star half icon yellow"></i></td>
+                            <td data-label="Location">220 King St N, N2J 2Y7</td>
+                            <td data-label="Price Range"><i class="dollar sign icon"></i></td>
+                            <td data-label="Menu"><button class="ui primary button">
+                                    Show Menu
+                                </button></td>
+                        </tr>
+                        <tr id="loadCampusPizzaMenu">
+                            <td data-label="Name">Campus Pizza</td>
+                            <td data-label="Type">
+                                <div class="ui label">Pizza</div>
+                            </td>
+                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
+                                    class="star icon yellow"></i><i class="star icon half yellow"></i></td>
+                            <td data-label="Location">160 University Ave W Unit 2, N2L 3E9</td>
+                            <td data-label="Price Range"><i class="dollar sign icon"></i></td>
+                            <td data-label="Menu"><button class="ui primary button">
+                                    Show Menu
+                                </button></td>
+                        </tr>
+                        <tr id="loadAuntysKitchenMenu">
+                            <td data-label="Name">Aunty's Kitchen</td>
+                            <td data-label="Type">
+                                <div class="ui label">Pakistani</div>
+                            </td>
+                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
+                                    class="star icon yellow"></i><i class="star half icon yellow"></i></td>
+                            <td data-label="Location">160 University Ave W, N2L 3E9</td>
+                            <td data-label="Price Range"><i class="dollar sign icon"></i><i
+                                    style=" margin-left: -10px; " class="dollar sign icon"></i></td>
+                                    <td data-label="Menu"><button class="ui primary button">
+                                            Show Menu
+                                        </button></td>
+                        </tr>
+                        <tr id="loadSubwayMenu">
+                            <td data-label="Name">Subway</td>
+                            <td data-label="Type">
+                                <div class="ui label">Sandwich</div>
+                            </td>
+                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
+                                    class="star half icon yellow"></i></td>
+                            <td data-label="Location">200 University Ave W, N2L 3G1</td>
+                            <td data-label="Price Range"><i class="dollar sign icon"></i></td>
+                            <td data-label="Menu"><button class="ui primary button">
+                                    Show Menu
+                                </button></td>
+                        </tr>
+                        <tr id="loadKabobHutMenu">
+                            <td data-label="Name">Kabob Hut</td>
+                            <td data-label="Type">
+                                <div class="ui label">Persian</div>
+                            </td>
+                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
+                                    class="star icon yellow"></i><i class="star icon yellow"></i><i
+                                    class="star icon half yellow"></i></td>
+                            <td data-label="Location">170 University Ave W, N2L 3E9</td>
+                            <td data-label="Price Range"><i class="dollar sign icon"></i><i
+                                    style=" margin-left: -10px; " class="dollar sign icon"></i></td>
+                                    <td data-label="Menu"><button class="ui primary button">
+                                            Show Menu
+                                        </button></td>
+                        </tr>
                         <tr id="loadiPotatoMenu">
                             <td data-label="Name">iPotato</td>
                             <td data-label="Type"></td>
-                            <td data-label="Rating">3.5</td>
+                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
+                                    class="star icon yellow"></i><i class="star icon half yellow"></i></td>
                             <td data-label="Location">170 University Ave W Unit 21, N2L 3E9</td>
-                            <td data-label="Price Range">$</td>
+                            <td data-label="Price Range"><i class="dollar sign icon"></i></td>
+                            <td data-label="Menu"><button class="ui primary button">
+                                    Show Menu
+                                </button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -157,30 +274,30 @@
 
 
         <div class="ui modal menu">
-                <i class="close icon"></i>
-                <div id="menuHeader" class="header">
-                  Menu
-                </div>
-                <iframe id="resMenu" src="" width="100%" height="80%"></iframe>
-                <div class="actions">
-                  <div class="ui black deny button">
+            <i class="close icon"></i>
+            <div id="menuHeader" class="header">
+                Menu
+            </div>
+            <iframe id="resMenu" src="" width="100%" height="80%"></iframe>
+            <div class="actions">
+                <div class="ui black deny button">
                     Close
-                  </div>
                 </div>
-              </div>
+            </div>
+        </div>
 
 
-                  <div class="ui modal tiny nomenu">
-                        <i class="close icon"></i>
-                        <div id="menuHeader" class="header">
-                          No Menu Found
-                        </div>
-                        <div class="actions">
-                          <div class="ui black deny button">
-                            Close
-                          </div>
-                        </div>
-                      </div>
+        <div class="ui modal tiny nomenu">
+            <i class="close icon"></i>
+            <div id="menuHeader" class="header">
+                No Menu Found
+            </div>
+            <div class="actions">
+                <div class="ui black deny button">
+                    Close
+                </div>
+            </div>
+        </div>
     </div>
 
 
