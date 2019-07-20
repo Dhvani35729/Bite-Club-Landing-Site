@@ -20,53 +20,368 @@ $ (window).on ('resize scroll', function () {
 });
 
 (function () {
-  // Get a reference to the table
-  // let tableRef = document.getElementById ('allRestaurants');
-  // fetch ('https://dashboard.uwbiteclub.com/api/biteclub/restaurants')
-  //   .then (res => res.json ())
-  //   .then (response => {
-  //     console.log (response);
-  //     if (response.hasOwnProperty ('list')) {
-  //       const all_restaurants = response['list'];
-  //       all_restaurants.forEach (restaurant => {
-  //         // Insert a row at the end of the table
-  //         let newRow = tableRef.insertRow (-1);
+  var tabledata = [
+    {
+      id: 1,
+      name: 'Shawarma Plus',
+      description: 'Authentic Mediterranean cuisine prepared with love',
+      price_level: '$$',
+      address: '220 King St N, Waterloo, ON N2J 2Y7, Canada',
+      menu_items: [
+        {
+          title: 'Disposable Cutlery',
+          description: '',
+          price: '0.25',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: [],
+          add_ons: [],
+        },
+        {
+          title: 'Napkins & Disposable Plates',
+          description: '',
+          price: '0.25',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: [],
+          add_ons: [],
+        },
+        {
+          title: 'Baqlawah (Small Container of 4)',
+          description: 'Baqlawah (Small Container of 4)',
+          price: '4.99',
+          price_kind: '',
+          min_people: 2,
+          max_people: 4,
+          tags: ['Desserts', 'Middle Eastern', 'Desserts'],
+          add_ons: [],
+        },
+        {
+          title: 'Assorted Pop',
+          description: 'Root beer, iced tea, ginger ale, crush orange, 7-up, coke zero, diet coke, coke. ',
+          price: '1.99',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: [],
+          add_ons: [],
+        },
+        {
+          title: 'Chicken Shawarma (Half a Lbs)',
+          description: 'Chicken',
+          price: '8.99',
+          price_kind: '',
+          min_people: 1,
+          max_people: 1,
+          tags: ['Side-Dishes'],
+          add_ons: [],
+        },
+        {
+          title: 'Chicken Shawarma Plate',
+          description: 'Chicken shawarma served with rice and choice of raw veggies, Arabic salad or fattoush salad. Includes pita bread, garlic sauce, and hot sauce.',
+          price: '14.49',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: [],
+          add_ons: [
+            {
+              category: 'Add-Ons',
+              units: [
+                {name: 'Shawarma Nachos', price: '7.99'},
+                {name: 'Hummus', price: '3.5'},
+                {name: 'Muttabal (Eggplant)', price: '3.5'},
+                {name: 'Hummus & Muttabal', price: '4.99'},
+              ],
+            },
+            {category: 'Sides', units: [{name: 'Rice + Pita', price: '0.0'}]},
+            {
+              category: 'Salad',
+              units: [
+                {name: 'Raw Veggies', price: '0.0'},
+                {name: 'Arabic Salad', price: '0.0'},
+                {name: 'Fattoush Salad', price: '0.0'},
+                {name: 'Tabbouleh salad', price: '1.5'},
+              ],
+            },
+            {
+              category: 'Main',
+              units: [{name: 'Chicken Shawarma', price: '0.0'}],
+            },
+            {
+              category: 'Sauces',
+              units: [{name: 'Garlic Sauce + Hot Sauce', price: '0.0'}],
+            },
+          ],
+        },
+        {
+          title: 'Hummus and Olive Oil Dip',
+          description: 'Hummus and Olive Oil Dip',
+          price: '6.99',
+          price_kind: '',
+          min_people: 2,
+          max_people: 4,
+          tags: ['Vegetarian', 'Side-Dishes'],
+          add_ons: [],
+        },
+        {
+          title: 'Bottled Water',
+          description: '',
+          price: '1.99',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: [],
+          add_ons: [],
+        },
+        {
+          title: 'Chicken Shawarma Wrap',
+          description: 'Chicken shawarma wrap, stuffed with tomatoes, lettuce, onions, pickles, garlic, and hot sauce.',
+          price: '7.75',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: [],
+          add_ons: [
+            {
+              category: 'Add-Ons',
+              units: [
+                {name: 'Hummus', price: '2.5'},
+                {name: 'Muttabal (Eggplant)', price: '2.5'},
+                {name: 'Hummus & Muttabal', price: '3.75'},
+                {name: 'Shawarma Nachos', price: '7.99'},
+              ],
+            },
+            {
+              category: 'Wrap',
+              units: [{name: 'Chicken Shawarma Wrap', price: '0.0'}],
+            },
+          ],
+        },
+        {
+          title: 'Shawarma Nachos',
+          description: 'Snack size shawarma nachos ',
+          price: '9.99',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: [
+            'Mexican',
+            'Mediterranean',
+            'Appetizers',
+            'Snacks',
+            'Side-Dishes',
+          ],
+          add_ons: [],
+        },
+        {
+          title: 'Dawoud Basha',
+          description: 'Kebabs cooked in the broth of tomatoes with potatoes, has a hint of spice, and served with rice & side salad.',
+          price: '14.5',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: ['Mediterranean', 'Entrées', 'Gluten-Free'],
+          add_ons: [],
+        },
+        {
+          title: 'Canned Juices',
+          description: 'Assorted canned fruit juices. ',
+          price: '1.99',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: [],
+          add_ons: [],
+        },
+        {
+          title: 'Falafel Wrap',
+          description: 'Falafel wrap, stuffed with tomatoes, pickles, parsely, cucumbers, and tahini sauce.',
+          price: '7.95',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: [],
+          add_ons: [
+            {
+              category: 'Add-Ons',
+              units: [
+                {name: 'Hummus', price: '2.5'},
+                {name: 'Muttabal (Eggplant)', price: '2.5'},
+                {name: 'Hummus & Muttabal', price: '3.75'},
+                {name: 'Shawarma Nachos', price: '7.99'},
+              ],
+            },
+            {category: 'Wrap', units: [{name: 'Falafel Wrap', price: '0.0'}]},
+          ],
+        },
+        {
+          title: 'Falafel Plate',
+          description: 'Falafel (5 pieces) served with rice and choice of raw veggies, Arabic salad or fattoush salad. Includes pita bread, garlic sauce and hot sauce.',
+          price: '14.99',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: [],
+          add_ons: [
+            {category: 'Sides', units: [{name: 'Rice + Pita', price: '0.0'}]},
+            {
+              category: 'Salad',
+              units: [
+                {name: 'Raw Veggies', price: '0.0'},
+                {name: 'Arabic Salad', price: '0.0'},
+                {name: 'Fattoush Salad', price: '0.0'},
+                {name: 'Tabbouleh Salad', price: '1.5'},
+              ],
+            },
+            {
+              category: 'Add-Ons',
+              units: [
+                {name: 'Hummus', price: '2.5'},
+                {name: 'Mutabal (Eggplant)', price: '2.5'},
+                {name: 'Hummus & Muttabal', price: '3.75'},
+                {name: 'Shawarma Nachos', price: '7.99'},
+              ],
+            },
+            {category: 'Main', units: [{name: 'Falafel', price: '0.0'}]},
+            {
+              category: 'Sauces',
+              units: [{name: 'Garlic Sauce + Hot Sauce', price: '0.0'}],
+            },
+          ],
+        },
+        {
+          title: "Huraq Isba'oo (vegan)",
+          description: 'Celery, Lentils, onions, garlic, pomegranate & other vegetables cooked together to perfection & topped with fried pita chips & fried caramelized onions. Served with side salad',
+          price: '14.0',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: ['Mediterranean', 'Vegan', 'Entrées'],
+          add_ons: [],
+        },
+        {
+          title: 'Mojadara / Koshari (vegan)',
+          description: 'Rice with lentils topped with fried caramelized onions and homemade hot sauce.  Served with pickles, turnibs & side salad.',
+          price: '14.0',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: [
+            'Gluten-Free',
+            'Egg-Free',
+            'Dairy-Free',
+            'Mediterranean',
+            'Vegan',
+            'Entrées',
+          ],
+          add_ons: [],
+        },
+        {
+          title: 'Chicken Shawarma Salad',
+          description: 'Chicken shawarma on top of a salad with; tomatoes, lettuce, onions, pickles, garlic & hot sauce.',
+          price: '12.0',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: ['Salads & Bowls', 'Mediterranean'],
+          add_ons: [
+            {
+              category: 'Add Ons',
+              units: [
+                {name: 'No Add Ons', price: '0.0'},
+                {name: 'Hummus', price: '2.5'},
+                {name: 'Muttabal (Eggplant)', price: '2.5'},
+                {name: 'Hummus & Muttabal', price: '3.75'},
+              ],
+            },
+            {
+              category: 'Salad',
+              units: [{name: 'Chicken Shawarma Salad', price: '0.0'}],
+            },
+          ],
+        },
+        {
+          title: 'Veal and Lamb Shawarma Salad',
+          description: 'A mix of Veal and Lamb on top of a salad with; tomatoes, lettuce, onions, pickles, garlic & hot sauce.',
+          price: '13.99',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: ['Mediterranean', 'Salads & Bowls'],
+          add_ons: [
+            {
+              category: 'Add Ons',
+              units: [
+                {name: 'Hummus', price: '2.5'},
+                {name: 'Muttabal (Eggplant)', price: '2.5'},
+                {name: 'Hummus & Muttabal', price: '3.75'},
+              ],
+            },
+            {
+              category: 'Salad',
+              units: [{name: 'Chicken Shawarma Salad', price: '0.0'}],
+            },
+          ],
+        },
+        {
+          title: 'Rice',
+          description: '',
+          price: '3.5',
+          price_kind: 'Serves Family Style',
+          min_people: 1,
+          max_people: null,
+          tags: ['Side-Dishes'],
+          add_ons: [],
+        },
+      ],
+    },
+  ];
 
-  //         // Insert a cell in the row at index 0
-  //         let newCell = newRow.insertCell (0);
-  //         // Append a text node to the cell
-  //         let newText = document.createTextNode (restaurant['name']);
-  //         newCell.appendChild (newText);
+  var table = new Tabulator ('#example-table', {
+    data: tabledata, //assign data to table
+    layout: 'fitColumns', //fit columns to width of table (optional)
+    columns: [
+      //Define Table Columns
+      {title: 'Name', field: 'name'},
+      {title: 'Description', field: 'description'},
+      {title: 'Price Range', field: 'price_level'},
+      {title: 'Address', field: 'address'},
+    ],
+    rowFormatter: function (row) {
+      //create and style holder elements
+      var holderEl = document.createElement ('div');
+      var tableEl = document.createElement ('div');
 
-  //         newCell = newRow.insertCell (1);
-  //         restaurant['categories'].forEach (category => {
-  //           let newText = document.createElement ('div');
-  //           newText.setAttribute ('class', 'ui label');
-  //           newText.textContent = category;
-  //           newCell.appendChild (newText);
-  //         });
+      holderEl.style.boxSizing = 'border-box';
+      holderEl.style.padding = '10px 30px 10px 10px';
+      holderEl.style.borderTop = '1px solid #333';
+      holderEl.style.borderBotom = '1px solid #333';
+      holderEl.style.background = '#ddd';
 
-  //         newCell = newRow.insertCell (2);
-  //         newText = document.createTextNode (restaurant['rating']);
-  //         newCell.appendChild (newText);
+      tableEl.style.border = '1px solid #333';
 
-  //         newCell = newRow.insertCell (3);
-  //         newText = document.createTextNode (
-  //           restaurant['address'].slice (0, -1).join ()
-  //         );
-  //         newCell.appendChild (newText);
+      holderEl.appendChild (tableEl);
 
-  //         newCell = newRow.insertCell (4);
-  //         newText = document.createTextNode (restaurant['price']);
-  //         newCell.appendChild (newText);
-  //       });
-  //       $ ('#loadingRestaurants').hide ();
-  //       $ ('#allRestaurants').removeClass ('hidden');
-  //     }
-  //   })
-  //   .catch (error => console.error ('Error:', error));
+      row.getElement ().appendChild (holderEl);
 
-  $ ('table').tablesort ();
+      var subTable = new Tabulator (tableEl, {
+        layout: 'fitColumns',
+        data: row.getData ().menu_items,
+        columns: [
+          {title: 'Title', field: 'title'},
+          {title: 'Description', field: 'description'},
+          {title: 'Price', field: 'price'},
+        ],
+      });
+    },
+    rowClick: function (e, row) {
+      //trigger an alert message when the row is clicked
+      // alert ('Row ' + row.getData ().id + ' Clicked!!!!');
+    },
+  });
 
   const restTable = document.getElementsByClassName ('restaurants-list');
   if (elementInViewport (restTable)) {
@@ -252,7 +567,7 @@ function showDivs (n) {
     slideIndex = x.length;
   }
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = 'none';
+    x[i].style.display = 'null';
   }
   x[slideIndex - 1].style.display = 'block';
 }
