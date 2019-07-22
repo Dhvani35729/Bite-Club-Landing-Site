@@ -340,48 +340,51 @@ $ (window).on ('resize scroll', function () {
     },
   ];
 
-  var table = new Tabulator ('#example-table', {
-    data: tabledata, //assign data to table
-    layout: 'fitColumns', //fit columns to width of table (optional)
-    columns: [
-      //Define Table Columns
-      {title: 'Name', field: 'name'},
-      {title: 'Description', field: 'description'},
-      {title: 'Price Range', field: 'price_level'},
-      {title: 'Address', field: 'address'},
-    ],
-    rowFormatter: function (row) {
-      //create and style holder elements
-      var holderEl = document.createElement ('div');
-      var tableEl = document.createElement ('div');
+  if (window.location.href.indexOf ('companies') != -1) {
+    var table = new Tabulator ('#example-table', {
+      data: tabledata, //assign data to table
+      layout: 'fitColumns', //fit columns to width of table (optional)
+      columns: [
+        //Define Table Columns
+        {title: 'Name', field: 'name'},
+        {title: 'Description', field: 'description'},
+        {title: 'Price Range', field: 'price_level'},
+        {title: 'Address', field: 'address'},
+      ],
+      rowFormatter: function (row) {
+        //create and style holder elements
+        var holderEl = document.createElement ('div');
+        var tableEl = document.createElement ('div');
 
-      holderEl.style.boxSizing = 'border-box';
-      holderEl.style.padding = '10px 30px 10px 10px';
-      holderEl.style.borderTop = '1px solid #333';
-      holderEl.style.borderBotom = '1px solid #333';
-      holderEl.style.background = '#ddd';
+        holderEl.style.boxSizing = 'border-box';
+        holderEl.style.padding = '10px 30px 10px 10px';
+        holderEl.style.borderTop = '1px solid #333';
+        holderEl.style.borderBotom = '1px solid #333';
+        holderEl.style.background = '#ddd';
 
-      tableEl.style.border = '1px solid #333';
+        tableEl.style.border = '1px solid #333';
 
-      holderEl.appendChild (tableEl);
+        holderEl.appendChild (tableEl);
 
-      row.getElement ().appendChild (holderEl);
+        row.getElement ().appendChild (holderEl);
 
-      var subTable = new Tabulator (tableEl, {
-        layout: 'fitColumns',
-        data: row.getData ().menu_items,
-        columns: [
-          {title: 'Title', field: 'title'},
-          {title: 'Description', field: 'description'},
-          {title: 'Price', field: 'price'},
-        ],
-      });
-    },
-    rowClick: function (e, row) {
-      //trigger an alert message when the row is clicked
-      // alert ('Row ' + row.getData ().id + ' Clicked!!!!');
-    },
-  });
+        var subTable = new Tabulator (tableEl, {
+          layout: 'fitColumns',
+          data: row.getData ().menu_items,
+          columns: [
+            {title: 'Title', field: 'title'},
+            {title: 'Description', field: 'description'},
+            {title: 'Price', field: 'price'},
+            {title: 'Tags', field: 'tags'},
+          ],
+        });
+      },
+      rowClick: function (e, row) {
+        //trigger an alert message when the row is clicked
+        // alert ('Row ' + row.getData ().id + ' Clicked!!!!');
+      },
+    });
+  }
 
   const restTable = document.getElementsByClassName ('restaurants-list');
   if (elementInViewport (restTable)) {
