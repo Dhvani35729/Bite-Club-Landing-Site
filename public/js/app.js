@@ -345,6 +345,11 @@ $ (window).on ('resize scroll', function () {
     return '<button class="ui primary button">Show Menu</button>';
   };
 
+  if ($ ('#restaurantsBasicTable').length) {
+    $ ('#restaurantsBasicTable').tablesort ();
+    $ ('#restaurantsBasicTable tr > *:nth-child(6)').hide ();
+  }
+
   if (window.location.href.indexOf ('companies') != -1) {
     var table = new Tabulator ('#example-table', {
       data: tabledata, //assign data to table
@@ -491,9 +496,9 @@ $ ('.ui.modal.menu').modal ({
   },
 });
 
-$ ('#loadiPotatoMenu').click (function () {
-  $ ('.nomenu').modal ('show');
-});
+// $ ('#loadiPotatoMenu').click (function () {
+//   $ ('.nomenu').modal ('show');
+// });
 
 $ ('#firstTimeUser').click (function () {
   $ ('#firstTimeUser').addClass ('loading');

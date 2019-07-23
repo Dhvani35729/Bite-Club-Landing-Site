@@ -75,7 +75,8 @@
                     <hr>
                     <div class="project shadow2 grow">
                         <div class="ptext" style="width: 100%">
-                            <h1>Personalized and Convenient Catering from Restaurants of Your Choice for the Lowest Price Possible.</h1>
+                            <h1>Personalized and Convenient Catering from Restaurants of Your Choice for the Lowest
+                                Price Possible.</h1>
                         </div>
 
 
@@ -94,8 +95,10 @@
                             <div class="content">
                                 <ol>
                                     <li>
-                                    Fill out the form with your restaurant preferences. You can select and rate your favorite restaurants
-                                    or just provide us with general preferences and let us pick the perfect restaurants for you!
+                                        Fill out the form with your restaurant preferences. You can select and rate your
+                                        favorite restaurants
+                                        or just provide us with general preferences and let us pick the perfect
+                                        restaurants for you!
                                     </li>
                                     <br />
                                     <li>
@@ -104,7 +107,9 @@
                                     </li>
                                     <br />
                                     <li>
-                                        Receive the best offer possible for a restaurant you picked or were matched with. Select what menu items and quantities you would like to order, or just use our suggested order.
+                                        Receive the best offer possible for a restaurant you picked or were matched
+                                        with. Select what menu items and quantities you would like to order, or just use
+                                        our suggested order.
                                     </li>
                                     <br />
 
@@ -137,7 +142,9 @@
 
                                 <h6><b>Convenience and zero-risk. </b></h6>
                                 <p>
-                                    You just have to fill out a form. We can take care of all the work by finding the best restaurant and corresponding order possible for your preferences and details. There is zero-risk as you only have to make a payment if you like the offer.
+                                    You just have to fill out a form. We can take care of all the work by finding the
+                                    best restaurant and corresponding order possible for your preferences and details.
+                                    There is zero-risk as you only have to make a payment if you like the offer.
 
                                 </p>
 
@@ -147,7 +154,9 @@
                                 Which restaurants can I order from?
                             </div>
                             <div class="content">
-                                <p>All participating restaurants are listed in the table below. More restaurants are added regularly. If you would like to see us add any specific restaurants, let us know.</p>
+                                <p>All participating restaurants are listed in the table below. More restaurants are
+                                    added regularly. If you would like to see us add any specific restaurants, let us
+                                    know.</p>
                             </div>
 
                         </div>
@@ -173,7 +182,7 @@
                 <h1 id="tableTitle">Restaurants</h1>
                 <h5>Click on a row to see the menu.</h5>
                 <hr>
-                <table class="ui striped selectable sortable celled table">
+                <table id="restaurantsBasicTable" class="ui striped selectable sortable celled table">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -185,114 +194,656 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr id="loadFreshBurritoMenu">
-                            <td data-label="Name">Fresh Burrito</td>
+
+                        <tr id="loadAngelsFamilyRestaurant">
+                            <td data-label="Name">Angel's Family Restaurant</td>
+                            <td data-label="Type">
+                                <div class="ui label">Diners</div>
+                                <div class="ui label">Delis</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">190 Weber Street NWaterloo, ON N2J 3H5</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadAuntysKitchen">
+                            <td data-label="Name">Aunty's Kitchen</td>
+                            <td data-label="Type">
+                                <div class="ui label">Indian</div>
+                                <div class="ui label">Pakistani</div>
+                                <div class="ui label">Halal</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">160 University Avenue WWaterloo, ON N2L 3E9</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadBhimasWarung">
+                            <td data-label="Name">Bhima's Warung</td>
+                            <td data-label="Type">
+                                <div class="ui label">Indonesian</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">262 King Street NWaterloo, ON N2J 2Y9</td>
+                            <td data-label="Price Range">$$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadBiancasPizza">
+                            <td data-label="Name">Bianca's Pizza</td>
+                            <td data-label="Type">
+                                <div class="ui label">Pizza</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">363 King Street NWaterloo, ON N2J</td>
+                            <td data-label="Price Range">$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadBurritoBoyz">
+                            <td data-label="Name">Burrito Boyz</td>
+                            <td data-label="Type">
+                                <div class="ui label">Tex-Mex</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">258 King Street NWaterloo, ON N2J 2Y9</td>
+                            <td data-label="Price Range">$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadCampusPizza">
+                            <td data-label="Name">Campus Pizza</td>
+                            <td data-label="Type">
+                                <div class="ui label">Pizza</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">160 University Avenue WWaterloo, ON N2L 3E9</td>
+                            <td data-label="Price Range">$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadEastSideMarios">
+                            <td data-label="Name">East Side Mario's</td>
+                            <td data-label="Type">
+                                <div class="ui label">Italian</div>
+                                <div class="ui label">American (Traditional)</div>
+                                <div class="ui label">Pizza</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">170 University Ave WestWaterloo, ON N2L 3E9</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadEnniosPastaHouse">
+                            <td data-label="Name">Ennio's Pasta House</td>
+                            <td data-label="Type">
+                                <div class="ui label">Italian</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">384 King Street NWaterloo, ON N2J 2Z3</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadFratBurger">
+                            <td data-label="Name">Frat Burger</td>
+                            <td data-label="Type">
+                                <div class="ui label">Burgers</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">247 King Street NSuite 1A&1BWaterloo, ON N2L 3C2</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadFreshBurritoMexicanGrill">
+                            <td data-label="Name">Fresh Burrito Mexican Grill</td>
                             <td data-label="Type">
                                 <div class="ui label">Mexican</div>
                             </td>
-                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
-                                    class="star icon yellow"></i><i class="star icon yellow"></i><i
-                                    class="star half icon yellow"></i></td>
-                            <td data-label="Location">170 University Ave W Unit 31, N2L 3E9</td>
-                            <td data-label="Price Range"><i class="dollar sign icon"></i></td>
-                            <td data-label="Menu"><button class="ui primary button">
-                                    Show Menu
-                                </button></td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">170 University Avenue WestUnit 31Waterloo, ON N2L 3E9</td>
+                            <td data-label="Price Range"></td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
                         </tr>
-                        <tr id="loadDoShackMenu">
+                        <tr id="loadGinosPizza">
+                            <td data-label="Name">Gino's Pizza</td>
+                            <td data-label="Type">
+                                <div class="ui label">Pizza</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">94 Bridgeport Road EWaterloo, ON N2J 2J9</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadGourmetPizzaCafe">
+                            <td data-label="Name">Gourmet Pizza Cafe</td>
+                            <td data-label="Type">
+                                <div class="ui label">Pizza</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">75 King St SWaterloo, ON N2J 1P2</td>
+                            <td data-label="Price Range">$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadHarmonyLunch">
+                            <td data-label="Name">Harmony Lunch</td>
+                            <td data-label="Type">
+                                <div class="ui label">Burgers</div>
+                                <div class="ui label">Breakfast & Brunch</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">90 King Street NWaterloo, ON N2J 2X2</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadHolyGuacamoleFreshMex">
+                            <td data-label="Name">Holy Guacamole Fresh Mex</td>
+                            <td data-label="Type">
+                                <div class="ui label">Mexican</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">65 University Ave ESuite 5Waterloo, ON N2J 2V9</td>
+                            <td data-label="Price Range">$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadKabobHut">
+                            <td data-label="Name">Kabob Hut</td>
+                            <td data-label="Type">
+                                <div class="ui label">Persian/Iranian</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">170 University Avenue WWaterloo, ON N2L 3E9</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadKenSushi">
+                            <td data-label="Name">Ken Sushi</td>
+                            <td data-label="Type">
+                                <div class="ui label">Sushi Bars</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">256 Phillip StreetWaterloo, ON N2L 0W3</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadLazeezShawarma">
+                            <td data-label="Name">Lazeez Shawarma</td>
+                            <td data-label="Type">
+                                <div class="ui label">Mediterranean</div>
+                                <div class="ui label">Middle Eastern</div>
+                                <div class="ui label">Halal</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">22-170 University Ave WWaterloo, ON N2L 3E9</td>
+                            <td data-label="Price Range"></td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadMarblesRestaurant">
+                            <td data-label="Name">Marbles Restaurant</td>
+                            <td data-label="Type">
+                                <div class="ui label">Canadian (New)</div>
+                                <div class="ui label">Salad</div>
+                                <div class="ui label">Wine Bars</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">8 William Street EWaterloo, ON N2J 1K9</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadMcCabesIrishPub&Grill">
+                            <td data-label="Name">McCabe's Irish Pub & Grill</td>
+                            <td data-label="Type">
+                                <div class="ui label">American (Traditional)</div>
+                                <div class="ui label">Irish Pub</div>
+                                <div class="ui label">Burgers</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">352 King Street WKitchener, ON N2G 1B1</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadMelsDiner">
+                            <td data-label="Name">Mel's Diner</td>
+                            <td data-label="Type">
+                                <div class="ui label">Breakfast & Brunch</div>
+                                <div class="ui label">Burgers</div>
+                                <div class="ui label">Sandwiches</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">140 University Avenue WWaterloo, ON N2L 6J3</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadThePitaFactory">
+                            <td data-label="Name">The Pita Factory</td>
+                            <td data-label="Type">
+                                <div class="ui label">Sandwiches</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">170 University Avenue WWaterloo, ON N2L 3E9</td>
+                            <td data-label="Price Range">$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadRajaFineIndianCuisine">
+                            <td data-label="Name">Raja Fine Indian Cuisine</td>
+                            <td data-label="Type">
+                                <div class="ui label">Indian</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">725 Belmont Avenue WKitchener, ON N2M 1P3</td>
+                            <td data-label="Price Range">$$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadSajTime">
+                            <td data-label="Name">Saj Time</td>
+                            <td data-label="Type">
+                                <div class="ui label">Lebanese</div>
+                                <div class="ui label">Fast Food</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">65 University Avenue EWaterloo, ON N2J 3H5</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadShawarmaRoyale">
+                            <td data-label="Name">Shawarma Royale</td>
+                            <td data-label="Type">
+                                <div class="ui label">Halal</div>
+                                <div class="ui label">Syrian</div>
+                                <div class="ui label">Middle Eastern</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">258 King Street NWaterloo, ON N2J 2Y9</td>
+                            <td data-label="Price Range">$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadShinwaAsianCuisine">
+                            <td data-label="Name">Shinwa Asian Cuisine</td>
+                            <td data-label="Type">
+                                <div class="ui label">Hakka</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">160 University Avenue WWaterloo, ON N2L 3E9</td>
+                            <td data-label="Price Range">$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadSliceNRice">
+                            <td data-label="Name">Slice N Rice</td>
+                            <td data-label="Type">
+                                <div class="ui label">Mexican</div>
+                                <div class="ui label">Halal</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">251 Hemlock StreetWaterloo, ON N2L 0H2</td>
+                            <td data-label="Price Range"></td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadSonnysDrive-InLimited">
+                            <td data-label="Name">Sonny's Drive-In Limited</td>
+                            <td data-label="Type">
+                                <div class="ui label">Fish & Chips</div>
+                                <div class="ui label">Burgers</div>
+                                <div class="ui label">Hot Dogs</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">256 Weber St NWaterloo, ON N2J 3H6</td>
+                            <td data-label="Price Range">$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadThePokéBox">
+                            <td data-label="Name">The Poké Box</td>
+                            <td data-label="Type">
+                                <div class="ui label">Salad</div>
+                                <div class="ui label">Poke</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">255 King Street NWaterloo, ON N2J 4V2</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadChicPeaPita&Grill">
+                            <td data-label="Name">Chic Pea Pita & Grill</td>
+                            <td data-label="Type">
+                                <div class="ui label">Mediterranean</div>
+                                <div class="ui label">Middle Eastern</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">91 University Avenue EWaterloo, ON N2J 3Y6</td>
+                            <td data-label="Price Range"></td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadDōShack">
                             <td data-label="Name">DōShack</td>
                             <td data-label="Type">
                                 <div class="ui label">Italian</div>
                                 <div class="ui label">Pizza</div>
                             </td>
-                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
-                                    class="star icon half yellow"></i></td>
-                            <td data-label="Location">160 Univeristy Avenue W Waterloo, ON N2L 3E9</td>
-                            <td data-label="Price Range"><i class="dollar sign icon"></i><i
-                                    style=" margin-left: -10px; " class="dollar sign icon"></i></td>
-                            <td data-label="Menu"><button class="ui primary button">
-                                    Show Menu
-                                </button></td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">160 Univeristy Avenue WWaterloo, ON N2L 3E9</td>
+                            <td data-label="Price Range"></td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
                         </tr>
-                        <tr id="loadShawermaPlusMenu">
-                            <td data-label="Name">Shawerma Plus</td>
+                        <tr id="loadEmpressOfIndia">
+                            <td data-label="Name">Empress Of India</td>
+                            <td data-label="Type">
+                                <div class="ui label">Indian</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">34 King Street SWaterloo, ON N2J 1N9</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadJustLovePiebySweet&SavouryPieCo">
+                            <td data-label="Name">Just Love Pie by Sweet & Savoury Pie Co</td>
+                            <td data-label="Type">
+                                <div class="ui label">Desserts</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">33 Erb Street WWaterloo, ON N2L 1S8</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadKismetRestaurant">
+                            <td data-label="Name">Kismet Restaurant</td>
+                            <td data-label="Type">
+                                <div class="ui label">Indian</div>
+                                <div class="ui label">Bangladeshi</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">160 University Aveune WWaterloo, ON N2L 3E9</td>
+                            <td data-label="Price Range">$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadMasalaBayFineIndianDining">
+                            <td data-label="Name">Masala Bay Fine Indian Dining</td>
+                            <td data-label="Type">
+                                <div class="ui label">Indian</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">3 Regina Street NWaterloo, ON N2J 2Z7</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadMeltwich">
+                            <td data-label="Name">Meltwich</td>
+                            <td data-label="Type">
+                                <div class="ui label">Poutineries</div>
+                                <div class="ui label">American (Traditional)</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">255 King Street NWaterloo, ON N2J 4V2</td>
+                            <td data-label="Price Range"></td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadMozysShawarma">
+                            <td data-label="Name">Mozy's Shawarma</td>
                             <td data-label="Type">
                                 <div class="ui label">Middle Eastern</div>
+                                <div class="ui label">Syrian</div>
+                                <div class="ui label">Falafel</div>
                             </td>
-                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
-                                    class="star icon yellow"></i><i class="star icon yellow"></i><i
-                                    class="star half icon yellow"></i></td>
-                            <td data-label="Location">220 King St N, N2J 2Y7</td>
-                            <td data-label="Price Range"><i class="dollar sign icon"></i></td>
-                            <td data-label="Menu"><button class="ui primary button">
-                                    Show Menu
-                                </button></td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">247 King Street NSuite 2Waterloo, ON N2J 2Y8</td>
+                            <td data-label="Price Range">$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
                         </tr>
-                        <tr id="loadCampusPizzaMenu">
-                            <td data-label="Name">Campus Pizza</td>
+                        <tr id="loadShawermaPlus">
+                            <td data-label="Name">Shawerma Plus</td>
+                            <td data-label="Type">
+                                <div class="ui label">Mediterranean</div>
+                                <div class="ui label">Halal</div>
+                                <div class="ui label">Lebanese</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                            <td data-label="Location">160 University Avenue WWaterloo, ON N2L 3E9</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+                        <tr id="loadTacoFarm">
+                            <td data-label="Name">Taco Farm</td>
+                            <td data-label="Type">
+                                <div class="ui label">Mexican</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">8 Erb Street WWaterloo, ON N2L 1S7</td>
+                            <td data-label="Price Range">$$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+
+
+                        <tr id="loadBabaGrill">
+                            <td data-label="Name">Baba Grill</td>
+                            <td data-label="Type">
+                                <div class="ui label">Chinese</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">170 University Ave W, Waterloo, ON N2L 3E9</td>
+                            <td data-label="Price Range">$</td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+
+                        <tr id="loadBuddysPizza">
+                            <td data-label="Name">Buddys Pizza & Wings</td>
                             <td data-label="Type">
                                 <div class="ui label">Pizza</div>
                             </td>
-                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
-                                    class="star icon yellow"></i><i class="star icon half yellow"></i></td>
-                            <td data-label="Location">160 University Ave W Unit 2, N2L 3E9</td>
-                            <td data-label="Price Range"><i class="dollar sign icon"></i></td>
-                            <td data-label="Menu"><button class="ui primary button">
-                                    Show Menu
-                                </button></td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">239 Weber St N, Waterloo, ON N2J 3H5</td>
+                            <td data-label="Price Range"></td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
                         </tr>
-                        <tr id="loadAuntysKitchenMenu">
-                            <td data-label="Name">Aunty's Kitchen</td>
+
+                        <tr id="loadIndulge">
+                            <td data-label="Name">Indulge Natural and Organic Kitchen</td>
                             <td data-label="Type">
-                                <div class="ui label">Pakistani</div>
+                                <div class="ui label">Organic</div>
+                                <div class="ui label">Healthy</div>
                             </td>
-                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
-                                    class="star icon yellow"></i><i class="star half icon yellow"></i></td>
-                            <td data-label="Location">160 University Ave W, N2L 3E9</td>
-                            <td data-label="Price Range"><i class="dollar sign icon"></i><i
-                                    style=" margin-left: -10px; " class="dollar sign icon"></i></td>
-                            <td data-label="Menu"><button class="ui primary button">
-                                    Show Menu
-                                </button></td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">1254 Union St, Kitchener, ON N2H 6K4</td>
+                            <td data-label="Price Range"></td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
                         </tr>
-                        <tr id="loadSubwayMenu">
-                            <td data-label="Name">Subway</td>
-                            <td data-label="Type">
-                                <div class="ui label">Sandwich</div>
-                            </td>
-                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
-                                    class="star half icon yellow"></i></td>
-                            <td data-label="Location">200 University Ave W, N2L 3G1</td>
-                            <td data-label="Price Range"><i class="dollar sign icon"></i></td>
-                            <td data-label="Menu"><button class="ui primary button">
-                                    Show Menu
-                                </button></td>
-                        </tr>
-                        <tr id="loadKabobHutMenu">
-                            <td data-label="Name">Kabob Hut</td>
-                            <td data-label="Type">
-                                <div class="ui label">Persian</div>
-                            </td>
-                            <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
-                                    class="star icon yellow"></i><i class="star icon yellow"></i><i
-                                    class="star icon half yellow"></i></td>
-                            <td data-label="Location">170 University Ave W, N2L 3E9</td>
-                            <td data-label="Price Range"><i class="dollar sign icon"></i><i
-                                    style=" margin-left: -10px; " class="dollar sign icon"></i></td>
-                            <td data-label="Menu"><button class="ui primary button">
-                                    Show Menu
-                                </button></td>
-                        </tr>
+
+
                         <tr id="loadiPotatoMenu">
                             <td data-label="Name">iPotato</td>
-                            <td data-label="Type"></td>
+                            <td data-label="Type">
+                                <div class="ui label">Donair</div>
+                            </td>
                             <td data-label="Rating"><i class="star icon yellow"></i><i class="star icon yellow"></i><i
                                     class="star icon yellow"></i><i class="star icon half yellow"></i></td>
                             <td data-label="Location">170 University Ave W Unit 21, N2L 3E9</td>
-                            <td data-label="Price Range"><i class="dollar sign icon"></i></td>
+                            <td data-label="Price Range">$</td>
                             <td data-label="Menu"><button class="ui primary button">
                                     Show Menu
                                 </button></td>
+                        </tr>
+
+                        <tr id="loadOmniPalace">
+                            <td data-label="Name">Omni Palace</td>
+                            <td data-label="Type">
+                                <div class="ui label">Chinese</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">247 King St N, Waterloo, ON N2J 2Y8</td>
+                            <td data-label="Price Range"></td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
+                        </tr>
+
+                        <tr id="loadUrwa">
+                            <td data-label="Name">Urwa's Pakistani and Indian Cuisine</td>
+                            <td data-label="Type">
+                                <div class="ui label">Pakistani</div>
+                            </td>
+                            <td data-label="Rating">
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star icon yellow"></i>
+                                <i class="star half icon yellow"></i>
+                            <td data-label="Location">402 King St N, Waterloo, ON N2J 2Z3</td>
+                            <td data-label="Price Range"></td>
+                            <td data-label="Menu"><button class="ui primary button"> Show Menu </button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -329,8 +880,8 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="dist/js/tabulator.min.js"></script>
-        <script src="semantic/semantic.min.js"></script>
+    <script type="text/javascript" src="dist/js/tabulator.min.js"></script>
+    <script src="semantic/semantic.min.js"></script>
     <script src="semantic/tablesort.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
 
