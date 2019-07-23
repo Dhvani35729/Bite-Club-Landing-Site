@@ -340,6 +340,11 @@ $ (window).on ('resize scroll', function () {
     },
   ];
 
+  var menuBtn = function (cell, formatterParams, onRendered) {
+    //plain text value
+    return '<button class="ui primary button">Show Menu</button>';
+  };
+
   if (window.location.href.indexOf ('companies') != -1) {
     var table = new Tabulator ('#example-table', {
       data: tabledata, //assign data to table
@@ -350,6 +355,16 @@ $ (window).on ('resize scroll', function () {
         {title: 'Description', field: 'description'},
         {title: 'Price Range', field: 'price_level'},
         {title: 'Address', field: 'address'},
+        {
+          title: 'Menu',
+          formatter: menuBtn,
+          align: 'center',
+          cellClick: function (e, cell) {
+            // alert ('Printing row data for: ' + cell.getRow ().getData ().name);
+            const id = cell.getRow ().getData ().id;
+            $ ('.subTable' + id + '').toggle ();
+          },
+        },
       ],
       rowFormatter: function (row) {
         //create and style holder elements
@@ -361,6 +376,8 @@ $ (window).on ('resize scroll', function () {
         holderEl.style.borderTop = '1px solid #333';
         holderEl.style.borderBotom = '1px solid #333';
         holderEl.style.background = '#ddd';
+        const id = row.getData ().id;
+        holderEl.setAttribute ('class', 'subTable' + id);
 
         tableEl.style.border = '1px solid #333';
 
@@ -382,6 +399,9 @@ $ (window).on ('resize scroll', function () {
       rowClick: function (e, row) {
         //trigger an alert message when the row is clicked
         // alert ('Row ' + row.getData ().id + ' Clicked!!!!');
+      },
+      renderComplete: function () {
+        $ ('.subTable1').hide ();
       },
     });
   }
